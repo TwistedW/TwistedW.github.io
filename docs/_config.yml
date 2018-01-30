@@ -16,7 +16,7 @@ title_separator          : "-"
 name                     : "Guang Wu" # &name is a YAML anchor which can be *referenced later
 description              : "First test"
 url                      : "https://twistedw.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "/twistedw" # the subpath of your site, e.g. "/blog"
+baseurl                  : #"/twistedw" # the subpath of your site, e.g. "/blog"
 repository               : #"mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
