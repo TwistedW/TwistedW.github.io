@@ -32,10 +32,7 @@ description:
 　　logistic函数$$\sigma(x)$$对应的函数曲线如下图所示：
 <p align="center">
     <img width="60%" src="/assets/img/blogimg/sigmoid.png" style="max-width:100%;">
-    </a>
 </p>
-
-
 <br>
 
 　　tanh函数以看作是放大并平移的logistic函数$$tanh(x) = 2\sigma(2x)-1$$

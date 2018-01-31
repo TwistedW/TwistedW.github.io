@@ -2,140 +2,58 @@
 layout: post
 title: 传统GAN的介绍
 category: 技术
-tags: [GAN]
+tags: [机器学习,GAN]
 description: 
 ---
 
->生成对抗网络自2014年提出来以后持续火热，今天我们一起来看看这个由GoodFollow提出来的GAN的思想
+>生成对抗网络自2014年提出来以后持续火热，今天我们一起来看看这个由GoodFellow提出来的GAN的思想
 
+GAN是由Ian Goodfellow在2014年写的[《Generative Adversarial Nets》](https://arxiv.org/abs/1406.2661)文章中提出的最新的思想。
+对于GAN我认为是个十分有意义的模型颠覆了我对计算机的理解，下图对框架做了描述：
 
-很多应用往往只展示最新或最热门的几条记录，但为了旧记录仍然可访问，所以就需要个分页的导航栏。然而，如何通过MySQL更好的实现分页，始终是比较令人头疼的问题。虽然没有拿来就能用的解决办法，但了解数据库的底层或多或少有助于优化分页查询。
-我们先从一个常用但性能很差的查询来看一看。
+![](/assets/img/GAN/GAN.png)
 
-	SELECT *
-	FROM city
-	ORDER BY id DESC
-	LIMIT 0, 15
+有一个比方很贴切的描述Generator和Discriminator，G就是一个生成模型，类似于卖假货的，一个劲儿地学习如何骗过D。而D则是一个判别模型，类似
+于警察叔叔，一个劲儿地学习如何分辨出G的骗人技巧。如此这般，随着D的鉴别技巧的越来越牛，G的骗人技巧也是越来越纯熟。一个造假一流的G，就是
+我们想要的生成模型。下图描述了GAN的生成模型：
 
-这个查询耗时0.00sec。So，这个查询有什么问题呢？实际上，这个查询语句和参数都没有问题，因为它用到了下面表的主键，而且只读取15条记录。
+![](/assets/img/GAN/Generator.png)
 
-	CREATE TABLE city (
-	  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-	  city varchar(128) NOT NULL,
-	  PRIMARY KEY (id)
-	) ENGINE=InnoDB;
+如图所示，生成器把噪声数据 z（也就是我们说的假数据）通过生成模型 G，伪装成了真实数据 x。(当然，因为 GAN 依旧是一个神经网络，你的生成模型
+需要是可微的(differentiable)). 训练的过程也比较直观，可以选择任何类 SGD 的方法（因为G和D两个竞争者都是可微的网络）。并且你要同时训练两
+组数据：一组真实的训练数据和一组由骗子G生成的数据。当然，也可以一组训练每跑一次时，另一组则跑 K 次，这样可以防止其中一个跟不上节奏。对于
+最小最大博弈由下图展示：
 
-真正的问题在于offset(分页偏移量)很大的时候，像下面这样：
+![](/assets/img/GAN/minimax.png)
 
-	SELECT *
-	FROM city
-	ORDER BY id DESC
-	LIMIT 100000, 15;
+在这里，J(D) 代表判别网络（也就是警察D）的目标函数—一个交叉熵（cross entropy）函数。其中左边部分表示 D 判断出 x 是真 x 的情况，右边部
+分则表示D判别出的由生成网络G（也就是骗子）把噪音数据 z 给伪造出来的情况。同理，J(G) 就是代表生成网络的目标函数，它的目的是跟 D 反着干，
+所以前面加了个负号（类似于一个 Jensen-Shannon(JS)距离的表达式）。这样就像两个人的零和博弈，一个想最大，另一个想最小。那么就要找到均衡点
+（也就是纳什均衡）就是 J(D) 的鞍点(saddle point)。由下图可形象的展示出来：
 
-上面的查询在有2M行记录时需要0.22sec，通过EXPLAIN查看SQL的执行计划可以发现该SQL检索了100015行，但最后只需要15行。大的分页偏移量会增加使用的数据，MySQL会将大量最终不会使用的数据加载到内存中。就算我们假设大部分网站的用户只访问前几页数据，但少量的大的分页偏移量的请求也会对整个系统造成危害。Facebook意识到了这一点，但Facebook并没有为了每秒可以处理更多的请求而去优化数据库，而是将重心放在将请求响应时间的方差变小。
-对于分页请求，还有一个信息也很重要，就是总共的记录数。我们可以通过下面的查询很容易的获取总的记录数。
+![](/assets/img/GAN/Strategy.png)
 
-	SELECT COUNT(*)
-	FROM city;
+由图，我们手上有真实数据（黑色点，data）和模型生成的伪数据（绿色线，model distribution，是由我们的 z 映射过去的）（画成波峰的形式是
+因为它们都代表着各自的分布，其中纵轴是分布，横轴是我们的 x）。而我们要学习的 D 就是那条蓝色的点线，这条线的目的是把融在一起的 data 和
+model 分布给区分开。写成公式就是 data 和 model 分布相加做分母，分子则是真实的 data 分布。我们最终要达到的效果是：D 无限接近于常数
+1/2。换句话说就是要 Pmodel 和 Pdata 无限相似。这个时候，D分布再也没法分辨出真伪数据的区别了。这样就可以说模型训练出了一个炉火纯青的造
+假者（生成模型）。结果就是下图的样子：
 
-然而，上面的SQL在采用InnoDB为存储引擎时需要耗费9.28sec。一个不正确的优化是采用SQL_CALC_FOUND_ROWS,SQL_CALC_FOUND_ROWS可以在能够在分页查询时事先准备好符合条件的记录数，随后只要执行一句select FOUND_ROWS(); 就能获得总记录数。但是在大多数情况下，查询语句简短并不意味着性能的提高。不幸的是，这种分页查询方式在许多主流框架中都有用到，下面看看这个语句的查询性能。
+![](/assets/img/GAN/Optimizer.png)
 
-	SELECT SQL_CALC_FOUND_ROWS *
-	FROM city
-	ORDER BY id DESC
-	LIMIT 100000, 15;
+但是这样也会有新的问题，生成模型跟源数据拟合之后就没法再继续学习了（因为常数线 y = 1/2 求导永远为 0）。为了解决这个问题，除了把两者对抗
+做成最小最大博弈，还可以把它写成非饱和（Non-Saturating）博弈：
 
-这个语句耗时20.02sec，是上一个的两倍。事实证明使用SQL_CALC_FOUND_ROWS做分页是很糟糕的想法。
-下面来看看到底如何优化。文章分为两部分，第一部分是如何获取记录的总数目，第二部分是获取真正的记录。
+![](/assets/img/GAN/Game.png)
 
-**高效的计算行数**
+由图中 G 自己的伪装成功率来表示自己的目标函数（不再是直接拿 J(D) 的负数）。这样的话，均衡就不再是由损失（loss）决定的了。J(D) 跟 J(G)
+没有简单粗暴的相互绑定，就算在 D 完美了以后，G 还可以继续被优化。在应用上，这套 GAN 理论最火的构架是 DCGAN（深度卷积生成对抗网
+络/Deep Convolutional Generative Adversarial Network）。这也就是我之前学的CNN的强化版本这就是一个反向的 CNN。
 
-如果采用的引擎是MyISAM，可以直接执行COUNT(*)去获取行数即可。相似的，在堆表中也会将行数存储到表的元信息中。但如果引擎是InnoDB情况就会复杂一些，因为InnoDB不保存表的具体行数。
-我们可以将行数缓存起来，然后可以通过一个守护进程定期更新或者用户的某些操作导致缓存失效时，执行下面的语句：
+![](/assets/img/GAN/DCGAN.png)
 
-	SELECT COUNT(*)
-	FROM city
-	USE INDEX(PRIMARY);
-
-
-
-**获取记录**
-
-下面进入这篇文章最重要的部分，获取分页要展示的记录。上面已经说过了，大的偏移量会影响性能，所以我们要重写查询语句。为了演示，我们创建一个新的表“news”，按照时事性排序(最新发布的在最前面)，实现一个高性能的分页。为了简单，我们就假设最新发布的新闻的Id也是最大的。
-
-	CREATE TABLE news(
-	   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-	   title VARCHAR(128) NOT NULL
-	) ENGINE=InnoDB;
-
-一个比较高效的方式是基于用户展示的最后一个新闻Id。查询下一页的语句如下，需要传入当前页面展示的最后一个Id。
-
-	SELECT *
-	FROM news WHERE id < $last_id
-	ORDER BY id DESC
-	LIMIT $perpage
-
-查询上一页的语句类似，只不过需要传入当前页的第一个Id，并且要逆序。
-
-	SELECT *
-	FROM news WHERE id > $last_id
-	ORDER BY id ASC
-	LIMIT $perpage
-
-上面的查询方式适合实现简易的分页，即不显示具体的页数导航，只显示“上一页”和“下一页”，例如博客中页脚显示“上一页”，“下一页”的按钮。但如果要实现真正的页面导航还是很难的,下面看看另一种方式。
-
-	SELECT id
-	FROM (
-	   SELECT id, ((@cnt:= @cnt + 1) + $perpage - 1) % $perpage cnt
-	   FROM news 
-	   JOIN (SELECT @cnt:= 0)T
-	   WHERE id < $last_id
-	   ORDER BY id DESC
-	   LIMIT $perpage * $buttons
-	)C
-	WHERE cnt = 0;
-
-通过上面的语句可以为每一个分页的按钮计算出一个offset对应的id。这种方法还有一个好处。假设，网站上正在发布一片新的文章，那么所有文章的位置都会往后移一位，所以如果用户在发布文章时换页，那么他会看见一篇文章两次。如果固定了每个按钮的offset Id，这个问题就迎刃而解了。
-如果表中的记录很少被删除、修改，还可以将记录对应的页码存储到表中，并在该列上创建合适的索引。采用这种方式，当新增一个记录的时候，需要执行下面的查询重新生成对应的页号。
-
-	SET @p:= 0;
-	UPDATE news SET page=CEIL((@p:= @p + 1) / $perpage) ORDER BY id DESC;
-
-当然，也可以新增一个专用于分页的表，可以用个后台程序来维护
-	
-	UPDATE pagination T
-	JOIN (
-	   SELECT id, CEIL((@p:= @p + 1) / $perpage) page
-	   FROM news
-	   ORDER BY id
-	)C
-	ON C.id = T.id
-	SET T.page = C.page;
-
-现在想获取任意一页的元素就很简单了：
-
-	SELECT *
-	FROM news A
-	JOIN pagination B ON A.id=B.ID
-	WHERE page=$offset;
-
-还有另外一种与上种方法比较相似的方法来做分页，这种方式比较试用于数据集相对小，并且没有可用的索引的情况下—比如处理搜索结果时。在一个普通的服务器上执行下面的查询，当有2M条记录时，要耗费2sec左右。这种方式比较简单，创建一个用来存储所有Id的临时表即可(这也是最耗费性能的地方)。
-
-	CREATE TEMPORARY TABLE _tmp (KEY SORT(random))
-	SELECT id, FLOOR(RAND() * 0x8000000) random
-	FROM city;
-	
-	ALTER TABLE _tmp ADD OFFSET INT UNSIGNED PRIMARY KEY AUTO_INCREMENT, DROP INDEX SORT, ORDER BY random;
-
-接下来就可以向下面一样执行分页查询了。
-
-	SELECT *
-	FROM _tmp
-	WHERE OFFSET >= $offset
-	ORDER BY OFFSET
-	LIMIT $perpage;
-
-简单来说，对于分页的优化就是,避免数据量大时扫描过多的记录。
-
+DCGAN目的是创造图片，其实就类似于把一组特征值慢慢恢复成一张图片。它与CNN的两者的比较就是：在每一个滤镜层，CNN是把大图片的重要特征提取出
+来，一步一步地减小图片尺寸。而DCGAN是把小图片（小数组）的特征放大，并排列成新图片。这里，作为DCGAN的输入的最初的那组小数据就是我们刚刚讲
+的噪声数据。
 
 欢迎指正错误，欢迎一起讨论！！！
