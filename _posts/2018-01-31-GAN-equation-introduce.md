@@ -117,8 +117,8 @@ GAN可以生成出近似于真实数据的数据。但是GAN存不存在问题�
 
 最后分享一下我手动推导的公式笔记，大家莫嫌弃：
 
-![](/assets/img/GAN/GANequation1.jpg)
+![](/assets/img/GAN/GANequation1.png)
 
-![](/assets/img/GAN/GANequation2.jpg)
+![](/assets/img/GAN/GANequation2.png)
 
 谢谢观看，希望对您有所帮助，欢迎指正错误，欢迎一起讨论！！！
