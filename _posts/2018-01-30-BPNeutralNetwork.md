@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 神经网络
+title: 神经网络入门
 category: 技术
-tags: [机器学习]
+tags: [机器学习、神经网络]
 description: 
 ---
 
