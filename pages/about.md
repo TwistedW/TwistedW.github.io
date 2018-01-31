@@ -10,8 +10,9 @@ permalink: /pages/about.html
 	<hr>
 	<br>
 	<p>
-	博客用<a href="http://jekyllrb.com/"><code>jekyll</code></a>（可将纯文本转化为静态网站和博客的语言）,<code>html</code>,<code>css</code>等构建。博客部署在<code>github</code>服务器上，前端采用<code>bootstrap</code>栅格式布局，可自适应移动端浏览器。
-	写博客的目的很单纯，就是记笔记，方便在不同终端上随时查看，偶尔也会记录身边发生的事情。
+	博客用<a href="http://jekyllrb.com/"><code>jekyll</code></a>（可将纯文本转化为静态网站和博客的语言）,<code>html</code>,<code>css</code>等构建。
+	博客部署在<code>github</code>服务器上，前端采用<code>bootstrap</code>栅格式布局，可自适应移动端浏览器。本博客用于记录
+	学习笔记和生活中的所见所得。
 	</p>
 	<br>
 	
