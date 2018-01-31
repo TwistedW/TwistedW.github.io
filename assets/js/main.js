@@ -142,7 +142,7 @@ function pjax_loadChart(){
 				    legend: {
 				        orient : 'vertical',
 				        x : 'left',
-				        data:['java','javascript','html','css','c++','data mining']
+				        data:['Python','javascript','html','css','c++','matlab']
 				    },
 				    toolbox: {
 				        show : false,
@@ -173,12 +173,12 @@ function pjax_loadChart(){
 				            radius : '55%',
 				            center: ['50%', '60%'],
 				            data:[
-				                {value:90, name:'java'},
+				                {value:90, name:'Python'},
 				                {value:60, name:'javascript'},
 				                {value:65, name:'html'},
 				                {value:65, name:'css'},
 				                {value:70, name:'c++'},
-				                {value:60, name:'data mining'}
+				                {value:60, name:'matlab'}
 				            ]
 				        }
 				    ]
