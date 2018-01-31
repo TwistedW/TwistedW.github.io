@@ -25,7 +25,7 @@ permalink: /pages/about.html
 
     <!--
         <div class="skillbar clearfix" data-percent="80%">
-            <div class="skillbar-title"><span>Python</span></div>
+            <div class="skillbar-title"><span>Java</span></div>
             <div class="skillbar-bar"></div>
             <div class="skill-bar-percent">80%</div>
         </div>
@@ -48,13 +48,13 @@ permalink: /pages/about.html
             <div class="skill-bar-percent">60%</div>
         </div>
 
-	    <div class="skillbar clearfix" data-percent="60%">
+		<div class="skillbar clearfix" data-percent="60%">
             <div class="skillbar-title"><span>CSS</span></div>
             <div class="skillbar-bar"></div>
             <div class="skill-bar-percent">60%</div>
         </div>
-	        -->
-    </div>	
+		-->
+    </div>
 
 	
 	<br>
