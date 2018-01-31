@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="info">
+	    <p class="post-meta"><i class="fa fa-calendar"></i>&nbsp;{{ page.date | date:"%Y-%m-%d" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+	    {% if page.tags.size > 0 %}
+		<i class="fa fa-tags"></i>
+		<span class="index-post-tag">
+		{% for tag in page.tags %}
+			<a class="pjaxlink" href="/pages/tags.html#{{tag}}">{{ tag}}</a>
+		{% endfor %}
+		</span>
+	    {% endif %}
+    </div>
+  </header>
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+</div>
+
+  <div class="prevandnext">
+    	  {% if page.next %}
+	    <div style="margin:0.5em;">
+	    <span>上一篇 ：</span><a class="pjaxlink" href="{{ site.url }}{{ page.next.url }}"  title="{{ page.next.title }}">{{ page.next.title }}</a>
+	    </div>
+	  {% endif %}
+  	  {% if page.previous %}
+	    <div style="margin:0.5em;">
+	    <span>下一篇 ：</span><a class="pjaxlink" href="{{ site.url }}{{ page.previous.url }}"  title="{{ page.previous.title }}">{{ page.previous.title }}</a>
+	    </div>
+	  {% endif %}
+	  	<div style="margin:0.5em;">
+			<span> 版权所有，转载时必须以链接形式注明原始出处</span>
+	    </div>
+	 
+  </div>
+  
+  {% include duoshuo.html %}

@@ -1,0 +1,23 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  
+  <link rel="stylesheet" href="{{ "/assets/css/bootstrap.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/assets/css/font-awesome.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/assets/js/fancybox/jquery.fancybox.css" | prepend: site.baseurl }}" media="screen">
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}" >
+  <link rel="stylesheet" href="{{ "/assets/js/prettify/prettify.css" | prepend: site.baseurl }}">
+  <link rel="shortcut icon" href="{{ site.favicon }}" />
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  <script type="text/javascript" src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+  <script type="text/javascript" src="/assets/js/embed.js"></script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/javascript" src="/assets/js/ua-parser.js"></script>
+  <script>var duoshuoQuery = {short_name:"maydaycoder"};</script>
+</head>

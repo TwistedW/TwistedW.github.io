@@ -1,0 +1,81 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.title }}'s blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>{{ site.title }}</li>
+          <li><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          {% if site.author.github%}
+          <li>
+            <a class="github" href="{{ site.author.github }}"  target="_blank"></a>
+          </li>
+          {% endif %}
+
+          {% if site.author.weibo %}
+          <li>
+            <a class="weibo" href="{{ site.author.weibo }}"  target="_blank"></a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">{{ site.description }}</p>
+      </div>
+    </div>
+    <div class="center sitedesc">
+    	Powered by <a href ="http://jekyllrb.com/">Jekyll</a>  |  © 2015 GY  |  Hosted on <a href="https://github.com/{{ site.author.github_username }}/{{ site.author.github_username }}.github.io"> Github</a>
+    </div>
+  </div>
+	
+ 
+  <script type="text/javascript">
+	  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+	  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+	  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+	  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+	  
+	  _st('install','yeJZSeBF6XzYF_iNno8P','2.0.0');
+  </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        TeX: {equationNumbers: {
+            autoNumber: ["AMS"], useLabelIds: true}},
+            "HTML-CSS": {linebreaks: {automatic: true}},
+            SVG: {linebreaks: {automatic: true}}
+    });
+   </script>
+  	<!-- 多说公共JS代码 start (一个网页只需插入一次) 
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"maydaycoder"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	多说公共JS代码 end -->
+  <script type="text/javascript" src="/assets/js/jquery.js"></script>
+  <script type="text/javascript" src="/assets/js/bootstrap.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.pjax.js"></script> 
+  <script type="text/javascript" src="/assets/js/echarts.js"></script> 
+  <script type="text/javascript" src="/assets/js/prettify/prettify.js"></script>
+  <script type="text/javascript" src="/assets/js/stickUp.min.js"></script>
+  <script type="text/javascript" src="/assets/js/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/assets/js/fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  <link rel="stylesheet" href="{{ "/assets/css/duoshuo.css" | prepend: site.baseurl }}"> 
+  
+</footer>
