@@ -24,34 +24,34 @@ permalink: /pages/about.html
 
 
     <!--
-        <div class="skillbar clearfix" data-percent="80%">
+        <div class="skillbar clearfix" data-percent="50%">
         <div class="skillbar-title"><span>Java</span></div>
         <div class="skillbar-bar"></div>
-        <div class="skill-bar-percent">80%</div>
+        <div class="skill-bar-percent">50%</div>
         </div>
 
-        <div class="skillbar clearfix" data-percent="60%">
+        <div class="skillbar clearfix" data-percent="20%">
         <div class="skillbar-title"><span>C++</span></div>
         <div class="skillbar-bar"></div>
-        <div class="skill-bar-percent">60%</div>
+        <div class="skill-bar-percent">20%</div>
         </div>
 
-        <div class="skillbar clearfix" data-percent="60%">
+        <div class="skillbar clearfix" data-percent="10%">
         <div class="skillbar-title"><span>java script</span></div>
         <div class="skillbar-bar"></div>
-        <div class="skill-bar-percent">60%</div>
+        <div class="skill-bar-percent">10%</div>
         </div>
 
-        <div class="skillbar clearfix" data-percent="60%">
+        <div class="skillbar clearfix" data-percent="10%">
         <div class="skillbar-title"><span>HTML</span></div>
         <div class="skillbar-bar"></div>
-        <div class="skill-bar-percent">60%</div>
+        <div class="skill-bar-percent">10%</div>
         </div>
 
-	    <div class="skillbar clearfix" data-percent="60%">
+	    <div class="skillbar clearfix" data-percent="10%">
         <div class="skillbar-title"><span>CSS</span></div>
         <div class="skillbar-bar"></div>
-        <div class="skill-bar-percent">60%</div>
+        <div class="skill-bar-percent">10%</div>
         </div>
 	-->
     </div>	
