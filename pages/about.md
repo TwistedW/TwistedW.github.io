@@ -15,46 +15,14 @@ permalink: /pages/about.html
 	</p>
 	<br>
 	
-	<h3><i class="fa fa-laptop"></i>&nbsp;IT技能</h3>
+    <h3><i class="fa fa-book"></i>&nbsp;研究方向</h3>
 	<hr>
 	<br>
-    <div class="skills">
-   	<div id="main" style="height:400px"></div>
-
-
-
-    <!--
-        <div class="skillbar clearfix" data-percent="80%">
-            <div class="skillbar-title"><span>Java</span></div>
-            <div class="skillbar-bar"></div>
-            <div class="skill-bar-percent">80%</div>
-        </div>
-
-        <div class="skillbar clearfix" data-percent="60%">
-            <div class="skillbar-title"><span>C++</span></div>
-            <div class="skillbar-bar"></div>
-            <div class="skill-bar-percent">60%</div>
-        </div>
-
-        <div class="skillbar clearfix" data-percent="60%">
-            <div class="skillbar-title"><span>java script</span></div>
-            <div class="skillbar-bar"></div>
-            <div class="skill-bar-percent">60%</div>
-        </div>
-
-        <div class="skillbar clearfix" data-percent="60%">
-            <div class="skillbar-title"><span>HTML</span></div>
-            <div class="skillbar-bar"></div>
-            <div class="skill-bar-percent">60%</div>
-        </div>
-
-		<div class="skillbar clearfix" data-percent="60%">
-            <div class="skillbar-title"><span>CSS</span></div>
-            <div class="skillbar-bar"></div>
-            <div class="skill-bar-percent">60%</div>
-        </div>
-		-->
-    </div>
+	<p>
+	    现在是研一的学生，老师给定的方向是生成对抗网络（GAN）这个方向。目前已经取得一定的进展具体的学习经验将在博客上详细解说。
+	目前正在准备发parper，结束后将对机器学习方面的知识进一步学习。
+	</p>
+	<br>
 
 	
 	<br>
