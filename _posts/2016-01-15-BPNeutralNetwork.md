@@ -14,9 +14,9 @@ description:
 
 　　人工神经元使用一个非线性的激活函数，输出一个活性值。假定神经元接受n个输入$$x=(x_1,x_2,\ldots,x_n)$$,用状态z表示一个神经元所获得的输入信号x的加权和，输出为该神经元的活性值a。具体定于如下:
 
-    \begin{equation}\label{equation1}z = \omega^T x + b\end{equation} 
+\begin{equation}\label{equation1}z = \omega^T x + b\end{equation} 
 
-    \begin{equation}\label{equation2}a = f(z)\end{equation}
+\begin{equation}\label{equation2}a = f(z)\end{equation}
 
 　　其中，w是n维的权重向量，b 是偏置。典型的激活函数f 有sigmoid型函数、非线性斜面函数等。
 　　如果我们设激活函数f为0或1的阶跃函数，人工神经元就是感知器。
@@ -31,7 +31,7 @@ description:
 
 　　logistic函数$$\sigma(x)$$对应的函数曲线如下图所示：	
 
-![](/assets/img/blogimg/sigmoid.png)
+![center](/assets/img/blogimg/sigmoid.png)
 
 　　tanh函数以看作是放大并平移的logistic函数$$tanh(x) = 2\sigma(2x)-1$$
 
