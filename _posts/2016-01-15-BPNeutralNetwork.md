@@ -14,9 +14,9 @@ description:
 
 　　人工神经元使用一个非线性的激活函数，输出一个活性值。假定神经元接受n个输入$$x=(x_1,x_2,\ldots,x_n)$$,用状态z表示一个神经元所获得的输入信号x的加权和，输出为该神经元的活性值a。具体定于如下:
 
-\begin{equation}\label{equation1}z = \omega^T x + b\end{equation} 
+    \begin{equation}\label{equation1}z = \omega^T x + b\end{equation} 
 
-\begin{equation}\label{equation2}a = f(z)\end{equation}
+    \begin{equation}\label{equation2}a = f(z)\end{equation}
 
 　　其中，w是n维的权重向量，b 是偏置。典型的激活函数f 有sigmoid型函数、非线性斜面函数等。
 　　如果我们设激活函数f为0或1的阶跃函数，人工神经元就是感知器。
@@ -25,9 +25,9 @@ description:
 
 　　sigmoid 型函数是指一类S 型曲线函数，常用的sigmoid 型函数有logistic 函数$$\sigma(x)$$ 和tanh(x) 函数。
 
-\begin{equation}\label{equation３}\sigma(x) = \frac{1}{1 + e ^ {-x}}\end{equation}
+    \begin{equation}\label{equation３}\sigma(x) = \frac{1}{1 + e ^ {-x}}\end{equation}
 
-\begin{equation}\label{equation４}\tanh(x) = \frac{e ^ {x} - e ^ {-x}}{e ^ {x} + e ^ {-x}}\end{equation} 
+    \begin{equation}\label{equation４}\tanh(x) = \frac{e ^ {x} - e ^ {-x}}{e ^ {x} + e ^ {-x}}\end{equation} 
 
 　　logistic函数$$\sigma(x)$$对应的函数曲线如下图所示：	
 
