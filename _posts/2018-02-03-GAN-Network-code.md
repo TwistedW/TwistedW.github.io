@@ -42,6 +42,7 @@ tensorflow的运行环境中是利用tensor作为数据流，所以在数据喂�
 的灰色图片。也就是mnist的RGB的channel=1.
 
 当我们下载好mnist数据集后，就可以拿来使用了。我先贴如何load数据的代码：
+
     def load_mnist(dataset_name):
         data_dir = os.path.join("./data", dataset_name)
 
