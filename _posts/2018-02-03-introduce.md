@@ -15,8 +15,7 @@ description:
 最后博主是学生没什么经济来源，如果对您有所帮助可以小小的赞助一下(当然没有也不要紧，做博客主要是为了方便自己)
 
 <p align="center">
-    <img src = '/assets/img/social/Alipy.png' height = '300px'>
-    <img src = '/assets/img/social/Wechat.png' height = '300px'>
+    <img src = '/assets/img/social/Alipy.png' height = '300px'>                <img src = '/assets/img/social/Wechat.png' height = '300px'>
 </p>
 
 我的GANs的完整代码：
