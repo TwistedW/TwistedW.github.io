@@ -54,13 +54,14 @@ description:
                                             * self.batch_size]
 
                 # update D network sess.run喂入数据优化更新D网络，并在tensorboard中更新
-                _, summary_str, d_loss = self.sess.run([self.d_optim, self.d_sum, self.d_loss],
-                                        feed_dict={self.inputs: batch_images, self.z: batch_z})
+                _, summary_str, d_loss = self.sess.run([self.d_optim, self.d_sum,
+                                         self.d_loss],feed_dict={
+                                         self.inputs: batch_images, self.z: batch_z})
                 self.writer.add_summary(summary_str, counter)
 
                 # update G network sess.run喂入数据优化更新G网络，并在tensorboard中更新
-                _, summary_str, g_loss = self.sess.run([self.g_optim, self.g_sum, self.g_loss],
-                                                        feed_dict={self.z: batch_z})
+                _, summary_str, g_loss = self.sess.run([self.g_optim, self.g_sum,
+                                            self.g_loss],feed_dict={self.z: batch_z})
                 self.writer.add_summary(summary_str, counter)
 
                 # display training status
@@ -68,22 +69,24 @@ description:
                 #训练一个batchsize打印一下loss，一个epoch打印1093次我认为没这个必要,
                 #50次batchsize后打印一下
                 if np.mod(counter, 50) == 0:
-                    print("Epoch: [%2d] [%4d/%4d] time: %4.4f, d_loss= %.8f, g_loss= %.8f" \
-                          % (epoch, idx, self.num_batches, time.time() - start_time,
-                           d_loss, g_loss))
+                    print("Epoch: [%2d] [%4d/%4d] time: %4.4f, d_loss= %.8f,
+                            g_loss= %.8f" % (epoch, idx, self.num_batches,
+                            time.time() - start_time,d_loss, g_loss))
 
                 # save training results for every 300 steps 训练300步保存一张图片
                 if np.mod(counter, 300) == 0:
                     #生成一张该阶段下的由生成器生成的“假图片”
-                    samples = self.sess.run(self.fake_images, feed_dict={self.z: self.sample_z})
+                    samples = self.sess.run(self.fake_images,
+                                            feed_dict={self.z: self.sample_z})
                     #此处计算生成图片的小框图片的排布，本处为8×8排布
                     tot_num_samples = min(self.sample_num, self.batch_size)
                     manifold_h = int(np.floor(np.sqrt(tot_num_samples)))
                     manifold_w = int(np.floor(np.sqrt(tot_num_samples)))
                     save_images(samples[:manifold_h * manifold_w, :, :, :],
-                                [manifold_h, manifold_w],'./' + check_folder(self.result_dir
-                                + '/' + self.model_dir) + '/' + self.model_name +
-                                '_train_{:02d}_{:04d}.png'.format(epoch, idx))
+                                [manifold_h, manifold_w],'./'
+                                + check_folder(self.result_dir
+                                + '/' + self.model_dir) + '/' + self.model_name
+                                +'_train_{:02d}_{:04d}.png'.format(epoch, idx))
 
             # After an epoch, start_batch_id is set to zero 经过一个epoch后start_batch_id置为0
             # non-zero value is only for the first epoch after loading pre-trained model
@@ -109,7 +112,8 @@ description:
 - 保存网络参数
 
 具体的代码我就不一行行的去解释了，其中涉及到一些地址保存和tensorboard的内容我就不详细展开了，详细的就看看我的github的完整代码吧。至于可
-视化这一部分我可能会出一篇文章单独说说。
+视化这一部分我可能会出一篇文章单独说说。至此GAN网络的搭建已经结束了，至于实验结果可以直接到我的github上看结果就好了，我就不把训练结果贴
+上来了，大家有什么问题可以一起讨论，前提是我有时间，哈哈！
 
 我的GANs的完整代码：
 
