@@ -42,7 +42,6 @@ tensorflow的运行环境中是利用tensor作为数据流，所以在数据喂�
 的灰色图片。也就是mnist的RGB的channel=1.
 
 当我们下载好mnist数据集后，就可以拿来使用了。我先贴如何load数据的代码：
-
     def load_mnist(dataset_name):
         data_dir = os.path.join("./data", dataset_name)
 
@@ -118,7 +117,7 @@ tensorflow的运行环境中是利用tensor作为数据流，所以在数据喂�
 这样处理完后就可以在训练GAN的时候直接feed就好了，我们先展示一下如何feed，具体的我们下期再说。
 
     _, summary_str, d_loss = self.sess.run([self.d_optim, self.d_sum, self.d_loss],
-								feed_dict={self.inputs: batch_images, self.z: batch_z})
+                                      feed_dict={self.inputs: batch_images, self.z: batch_z})
 
 好，初步的数据处理已经完成了。接下来就是搭建GAN的网络了，这是一个重要的环节，我们下次再说。
 

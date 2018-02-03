@@ -30,20 +30,24 @@ description:
                                             scope=scope)
 
     #本函数在于卷积网络的deconv
-    def deconv2d(input_, output_shape, k_h=5, k_w=5, d_h=2, d_w=2, name="deconv2d", stddev=0.02, with_w=False):
+    def deconv2d(input_, output_shape, k_h=5, k_w=5, d_h=2, d_w=2, name="deconv2d",
+                 stddev=0.02, with_w=False):
         with tf.variable_scope(name):
             # filter : [height, width, output_channels, in_channels]
             w = tf.get_variable('w', [k_h, k_w, output_shape[-1], input_.get_shape()[-1]],
                                 initializer=tf.random_normal_initializer(stddev=stddev))
 
             try:
-                deconv = tf.nn.conv2d_transpose(input_, w, output_shape=output_shape, strides=[1, d_h, d_w, 1])
+                deconv = tf.nn.conv2d_transpose(input_, w, output_shape=output_shape,
+                                                strides=[1, d_h, d_w, 1])
 
             # Support for verisons of TensorFlow before 0.7.0
             except AttributeError:
-                deconv = tf.nn.deconv2d(input_, w, output_shape=output_shape, strides=[1, d_h, d_w, 1])
+                deconv = tf.nn.deconv2d(input_, w, output_shape=output_shape,
+                                        strides=[1, d_h, d_w, 1])
 
-            biases = tf.get_variable('biases', [output_shape[-1]], initializer=tf.constant_initializer(0.0))
+            biases = tf.get_variable('biases', [output_shape[-1]],
+                                     initializer=tf.constant_initializer(0.0))
             deconv = tf.reshape(tf.nn.bias_add(deconv, biases), deconv.get_shape())
 
             if with_w:
@@ -74,13 +78,16 @@ description:
     # 送入生成器的输入噪声z为(64,62)
     def generator(self, z, is_training=True, reuse=False):
         with tf.variable_scope("generator", reuse=reuse):
-            net = tf.nn.relu(bn(linear(z, 1024, scope='g_fc1'), is_training=is_training, scope='g_bn1'))
-            net = tf.nn.relu(bn(linear(net, 128 * 7 * 7, scope='g_fc2'), is_training=is_training, scope='g_bn2'))
+            net = tf.nn.relu(bn(linear(z, 1024, scope='g_fc1'),
+                             is_training=is_training, scope='g_bn1'))
+            net = tf.nn.relu(bn(linear(net, 128 * 7 * 7, scope='g_fc2'),
+                             is_training=is_training, scope='g_bn2'))
             net = tf.reshape(net, [self.batch_size, 7, 7, 128])
             net = tf.nn.relu(
-                             bn(deconv2d(net, [self.batch_size, 14, 14, 64], 4, 4, 2, 2, name='g_dc3'),
-                             is_training=is_training,scope='g_bn3'))
-            out = tf.nn.sigmoid(deconv2d(net, [self.batch_size, 28, 28, 1], 4, 4, 2, 2, name='g_dc4'))
+                             bn(deconv2d(net, [self.batch_size, 14, 14, 64], 4, 4, 2, 2,
+                             name='g_dc3'),is_training=is_training,scope='g_bn3'))
+            out = tf.nn.sigmoid(deconv2d(net, [self.batch_size, 28, 28, 1], 4, 4, 2, 2,
+                                name='g_dc4'))
             return out
 
 **D网络的搭建**
@@ -101,7 +108,8 @@ description:
             #此处可以参考DCGAN，filter加上步长处理
             conv = tf.nn.conv2d(input_, w, strides=[1, d_h, d_w, 1], padding='SAME')
             #将conv加上偏值处理
-            biases = tf.get_variable('biases', [output_dim], initializer=tf.constant_initializer(0.0))
+            biases = tf.get_variable('biases', [output_dim],
+                                     initializer=tf.constant_initializer(0.0))
             conv = tf.reshape(tf.nn.bias_add(conv, biases), conv.get_shape())
 
             return conv
@@ -133,10 +141,12 @@ description:
             # 经过这一步卷积后，(64,28,28,1)-->(64,14,14,64) 具体的计算为(28-2)/2+1
             net = lrelu(conv2d(x, 64, 4, 4, 2, 2, name='d_conv1'))
             net = lrelu(
-            bn(conv2d(net, 128, 4, 4, 2, 2, name='d_conv2'), is_training=is_training, scope='d_bn2'))
+            bn(conv2d(net, 128, 4, 4, 2, 2, name='d_conv2'),
+                      is_training=is_training, scope='d_bn2'))
             net = tf.reshape(net, [self.batch_size, -1])
             net = MinibatchLayer(32, 32, net, 'd_fc3')
-            net = lrelu(bn(linear(net, 1024, scope='d_fc4'), is_training=is_training, scope='d_bn4'))
+            net = lrelu(bn(linear(net, 1024, scope='d_fc4'),
+                        is_training=is_training, scope='d_bn4'))
             out_logit = linear(net, 1, scope='d_fc5')
             out = tf.nn.sigmoid(out_logit)
 
