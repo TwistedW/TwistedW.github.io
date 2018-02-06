@@ -76,7 +76,7 @@ Wx+b的均值和方差是对整张map求得的，在batch_size * channel * heigh
 
 这一部分我就不细说了，因为我在CNN那篇文章中已经说过了使用方法，请移步到[这里](https://twistedw.github.io/2018/02/05/CNN.html)
 
-
+谢谢观看，希望对您有所帮助，欢迎指正错误，欢迎一起讨论！！！
 
 
 
