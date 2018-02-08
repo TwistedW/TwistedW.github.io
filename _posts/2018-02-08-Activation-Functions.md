@@ -22,7 +22,9 @@ description:
 图所示，假设所有的输入都大于0，那么考虑从激活函数传回线性函数中的权重的gradient，必然只能位于一三象限（如果是二维的话），
 那么如果理想的方向位于第二象限的话，则需要之字形前行，收敛变慢。
 
-![](/assets/img/BPNetwork/GUD.png)
+<p align="center">
+    <img src = '/assets/img/BPNetwork/GUD.png'>                
+</p>
 
 # 1.sigmoid函数 #
 
@@ -68,7 +70,7 @@ ELU则进一步修正ReLU中非zero mean的缺点，它可以证明的预期输�
 还有一个maxout neuron如下图所示，也是属于ReLU的变种，但变化较大，非线性能力也很强，但是对于整个模型来说参数加倍，并不是
 很常用。 
 
-![](/assets/img/BPNetwork/MN.png)
+<img src = '/assets/img/BPNetwork/MN.png' height = '300px'>
 
 # 5.实际使用的建议 #
 
