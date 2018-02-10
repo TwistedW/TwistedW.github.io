@@ -225,7 +225,9 @@ M(t)为梯度的第一时刻平均值，V(t)为梯度的第二时刻非中心方
 
 对优化算法进行可视化
 
-![](/assets/img/Optimizer/Optimizer.gif)
+<p align="center">
+    <img src = '/assets/img/Optimizer/Optimizer.gif'>                
+</p>
 
 从上面的动画可以看出，自适应算法能很快收敛，并快速找到参数更新中正确的目标方向；而标准的SGD、NAG和动量项等方法收敛缓慢，
 且很难找到正确的方向。
