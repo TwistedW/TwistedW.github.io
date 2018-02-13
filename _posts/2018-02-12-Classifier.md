@@ -11,12 +11,14 @@ description:
 
 # 朴素贝叶斯 #
 
-说到朴素贝叶斯，先说一下贝叶斯定理，首先要解释的就是条件概率，非常简单，P(A|B)表示事件B发生的情况下，事件A发生的概率
+说到朴素贝叶斯，先说一下贝叶斯定理，首先要解释的就是条件概率，非常简单，![](/assets/img/Classifier/base1.png)表示事件B发生
+的情况下，事件A发生的概率
 
 <img src = '/assets/img/Classifier/equation1.png' height = '50px'>
 
-贝叶斯定理之所以有用，是因为我们在生活中经常遇到这种情况：我们可以很容易直接得出P(A|B)，P(B|A)则很难直接得出，但我们更关
-心P(B|A)，贝叶斯定理就为我们打通从P(A|B)获得P(B|A)的道路。 
+贝叶斯定理之所以有用，是因为我们在生活中经常遇到这种情况：我们可以很容易直接得出![](/assets/img/Classifier/base1.png)，
+![](/assets/img/Classifier/base2.png)则很难直接得出，但我们更关心![](/assets/img/Classifier/base2.png)，贝叶斯定理就为
+我们打通从![](/assets/img/Classifier/base1.png)获得![](/assets/img/Classifier/base1.png)的道路。 
 
 直接给出贝叶斯定理：
 
