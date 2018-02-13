@@ -43,7 +43,7 @@ description:
 我们就知道在5-8之间，如果得到是，我们继续猜“是否在1-2之间？”。这样的话，我们只需要猜3次就能知道这个数到底是几。转化为信
 息熵公式就是：
 
-<img src = '/assets/img/Classifier/equation14.png' height = '40px'>
+<img src = '/assets/img/Classifier/equation14.png' height = '35px'>
 
 根据这公式和例子，我们能得到结果是3，这是因为我们对1-8数字可能被选取的概率一无所知，如果比如说1-8选取概率并不是均匀分布的，
 我们就能更快的找到相应的数字，因此信息熵也会相应的变小。
@@ -56,7 +56,7 @@ description:
 
 又称信息获取量或是信息增益，将样本的所有属性分割开，分别计算，熵之和，信息增益就是二者的差值。
 
-<img src = '/assets/img/Classifier/equation15.png' height = '60px'>
+<img src = '/assets/img/Classifier/equation15.png' height = '100px'>
 
 简单理解就是，没有属性A时候的信息量-有A时候的信息量。
 
@@ -70,7 +70,7 @@ description:
 
 然后，我们想计算下age属性的信息量，<30的5人，<30并买电脑的2人，不买的3人，其余31-40，>40方法同理，因此计算方式如下：
 
-<img src = '/assets/img/Classifier/equation16.png' height = '130px'>
+<img src = '/assets/img/Classifier/equation17.png' height = '150px'>
 
 因此Gain(age) = 0.940-0.694 = 0.246
 
