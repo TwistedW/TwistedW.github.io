@@ -672,7 +672,7 @@ blockquote {
  	right : 0.5em;
  }
 .navbar-default{
-	  background-image: url(/assets/img/bg5.png);
+	  background-image: url(/assets/img/bg6.png);
 	  border-width : 0;
 }
 
@@ -806,7 +806,7 @@ blockquote {
 	-moz-border-radius: 7px 7px 0 0; 
 	-webkit-border-radius: 7px 7px 0 0;  
 	height: 5.5em;
-	background-image: url(/assets/img/bg5.png);
+	background-image: url(/assets/img/bg6.png);
 	opacity: 0.7;
 	margin: -2em -2em -4em -2em;
 }
@@ -940,7 +940,7 @@ div.gavatar a:hover{
  */
 .site-footer {
   border-top: 2px solid #e8e8e8;
-  background-image: url(/assets/img/bg5.png);
+  background-image: url(/assets/img/bg6.png);
   padding: 20px 0; 
   position : absolute;
   width : 100%;
