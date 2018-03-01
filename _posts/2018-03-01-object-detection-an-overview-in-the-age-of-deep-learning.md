@@ -8,7 +8,7 @@ description:
 
 > 目标检测算法已经应用于很多实际领域，如相机、手机、无人机、医院。所以对于机器学习，深度学习感兴趣的学者对于目标检测算法还是要了解和使用的，
 我们今天一起来看看目标检测算法的综述，这篇文章是转载自[这里](http://www.infoq.com/cn/news/2017/09/deep-leayd-detection-algorithm),
-英文原作在[这里](https://tryolabs.com/blog/2017/08/30/object-detection-an-overview-in-the-age-of-deep-learning)
+英文原作在[这里](https://tryolabs.com/blog/2017/08/30/object-detection-an-overview-in-the-age-of-deep-learning)。
 
 # 目标检测VS其他计算机视觉问题 #
 **分类问题**
@@ -17,7 +17,7 @@ description:
 （部分）用于[年度ImageNet大规模视觉识别挑战比赛（ILSVRC）](http://www.image-net.org/challenges/LSVRC)。近年来，分类模型已经超过了人类的表现，
 因此该问题基本算是一个已经解决的问题。图像分类领域有许多挑战，但是也有许多文章介绍已经解决了的，以及未解决的挑战。
 
-<img src="/assets/img/Objective/classifier.jpg" height="400px" alt="分类样例"/>
+<img src="/assets/img/Objective/classifier.jpg" height="500px" alt="分类样例"/>
 
 **目标定位**
 
@@ -48,7 +48,7 @@ description:
 
 **人脸检测**
 
-自2000年年中，一些傻瓜相机已经开始自带人脸检测功能，能够进行更有效地自动对焦。虽然这只是目标检测的一种狭义类型，但它所使用的方法也适用于其他类型的目标，我们将在后面详述。
+自2000年中，一些傻瓜相机已经开始自带人脸检测功能，能够进行更有效地自动对焦。虽然这只是目标检测的一种狭义类型，但它所使用的方法也适用于其他类型的目标，我们将在后面详述。
 
 **计数**
 
@@ -87,7 +87,9 @@ description:
 这种输出数量不定的问题已经使用基于滑动窗口的方法得到了解决，在图片的不同位置得到滑窗的固定大小特征。在得到所有的预测值之后，一些滑窗被丢弃，
 一些被合并，从而得到最终输出。
 
-<iframe height=400 width=510 src="https://thumbs.gfycat.com/PalatableSoulfulBarnacle-mobile.mp4">
+<video width="510" height="400" controls>
+<source src="https://thumbs.gfycat.com/PalatableSoulfulBarnacle-mobile.mp4">
+</video>
 
 **大小**
 
