@@ -87,7 +87,7 @@ description:
 这种输出数量不定的问题已经使用基于滑动窗口的方法得到了解决，在图片的不同位置得到滑窗的固定大小特征。在得到所有的预测值之后，一些滑窗被丢弃，
 一些被合并，从而得到最终输出。
 
-<video width="510" height="400" controls align="center">
+<video width="510" height="400" align="center">
 <source src="https://thumbs.gfycat.com/PalatableSoulfulBarnacle-mobile.mp4">
 </video>
 
