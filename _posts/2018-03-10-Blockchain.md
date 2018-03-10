@@ -2,7 +2,7 @@
 layout: post
 title: 凑凑区块链热度
 category: 技术
-tags: [目标检测,算法]
+tags: [区块链]
 description: 
 ---
 
@@ -84,11 +84,11 @@ description:
 
 网上大都称为Merkle Hash Tree,这是因为 它所构造的Merkle Tree的所有节点都是Hash值。Merkle Tree具有以下特点：
 
-1. 它是一种树，可以是二叉树，也可以多叉树，无论是几叉树，它都具有树结构的所有特点；
+1.它是一种树，可以是二叉树，也可以多叉树，无论是几叉树，它都具有树结构的所有特点；
 
-2. Merkle树的叶子节点上的value，是由你指定的，这主要看你的设计了，如Merkle Hash Tree会将数据的Hash值作为叶子节点的值；
+2.Merkle树的叶子节点上的value，是由你指定的，这主要看你的设计了，如Merkle Hash Tree会将数据的Hash值作为叶子节点的值；
 
-3 非叶子节点的value是根据它下面所有的叶子节点值，然后按照一定的算法计算而得出的。如Merkle Hash Tree的非叶子节点value的计算方法是将该节点的所有子节点进行组合，
+3. 非叶子节点的value是根据它下面所有的叶子节点值，然后按照一定的算法计算而得出的。如Merkle Hash Tree的非叶子节点value的计算方法是将该节点的所有子节点进行组合，
 然后对组合结果进行hash计算所得出的hash value。
 
 ![](/assets/img/Blockchain/Bc3.png)
