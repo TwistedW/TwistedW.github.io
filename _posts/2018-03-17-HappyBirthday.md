@@ -9,7 +9,7 @@ description:
 > 姐！今天是你的生日，你又不让我给你买礼物，我在这里祝你生日快乐！
 
 <p align="center">
-    <img src="/assets/img/Life/HappyBirthday1.jpg">
+    <img src="/assets/img/Life/HappyBirthday1.jpg" height = '400px'>
 </p>
 
 真正在外面适应社会才发现只有家人才是最值得牵挂和思念的！外面的社会虽然充满新鲜但是给我一个选择的机会我还是会选择和家人在一起，
