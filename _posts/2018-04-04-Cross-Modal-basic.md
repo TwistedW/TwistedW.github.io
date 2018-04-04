@@ -84,9 +84,9 @@ False Negative(假负,FN)：将正类预测为负类数 漏报(Type II error).
 
 在信息检索领域，精确率和召回率又被称为查准率和查全率
 
-<img src="/assets/img/CrossModal/CM7.png" height="70px">
+<img src="/assets/img/CrossModal/CM7.png" height="60px">
 
-<img src="/assets/img/CrossModal/CM8.png" height="70px">
+<img src="/assets/img/CrossModal/CM8.png" height="60px">
 
 **平均正确率(Average Precision, AP)：对不同召回率点上的正确率进行平均。**
 
