@@ -58,18 +58,18 @@ False Negative(假负,FN)：将正类预测为负类数 漏报(Type II error).
 
 精确率(precision)定义为：
 
-![](/assets/img/CrossModal/CM2.png)
+<img src="/assets/img/CrossModal/CM2.png" height="60px">
 
 需要注意的是精确率(precision)和准确率(accuracy)是不一样的 
 
-![](/assets/img/CrossModal/CM3.png)
+<img src="/assets/img/CrossModal/CM3.png" height="60px">
 
 在正负样本不平衡的情况下，准确率这个评价指标有很大的缺陷。比如在互联网广告里面，点击的数量是很少的，一般只有千分之几，如果用acc，
 即使全部预测成负类（不点击）acc 也有 99% 以上，没有意义。
 
 召回率(recall,sensitivity,true positive rate)定义为：
 
-![](/assets/img/CrossModal/CM4.png)
+<img src="/assets/img/CrossModal/CM4.png" height="60px">
 
 **通俗理解精确率和召回率**
 
@@ -84,9 +84,9 @@ False Negative(假负,FN)：将正类预测为负类数 漏报(Type II error).
 
 在信息检索领域，精确率和召回率又被称为查准率和查全率
 
-![](/assets/img/CrossModal/CM7.png)
+<img src="/assets/img/CrossModal/CM7.png" height="70px">
 
-![](/assets/img/CrossModal/CM8.png)
+<img src="/assets/img/CrossModal/CM8.png" height="70px">
 
 **平均正确率(Average Precision, AP)：对不同召回率点上的正确率进行平均。**
 
