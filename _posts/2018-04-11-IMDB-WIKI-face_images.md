@@ -1,6 +1,6 @@
 ---
 layout: post
-title:IMDB-WIKI-500k+人脸数据集年龄整理的那些事
+title: IMDB-WIKI-500k+人脸数据集年龄整理的那些事
 category: 技术
 tags: [dataset]
 description: 
@@ -165,5 +165,9 @@ IMDB-WIKI人脸数据集对于人脸检测来说应该没问题但是拿来做�
 # 温馨提示 #
 
 如果你是用这个数据集来做预测的话，恭喜你！这个数据集应该问题不大。但是如果你是用来做生成的话你还需要好好优化优化你的数据集。
+
+最后我将整理的两种类型你年龄的代码传至github上了，可以查看：
+
+[label processing](https://github.com/TwistedW/label_processing)
 
 谢谢观看，希望对您有所帮助，欢迎指正错误，欢迎一起讨论！！！
