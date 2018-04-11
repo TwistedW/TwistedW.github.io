@@ -29,7 +29,7 @@ IMDB-WIKI 500k+ 是一个包含名人人脸图像、年龄、性别的数据集�
 至于年龄信息标注吗？我只能说官方给的年龄段统计是这样的：
 
 <p align="center">
-    <img src="/assets/img/dataset/face3.png">
+    <img src="/assets/img/dataset/face3.png" height = '400px'>
 </p>
 
 你要是自己把年龄信息相对应的图片都提出来你会发现有部分图片出现了年龄与图片不符的情况，这个也是后来用来做生成出现问题的一大难点，我们之后再说。
@@ -159,7 +159,7 @@ IMDB-WIKI人脸数据集对于人脸检测来说应该没问题但是拿来做�
 但是整体实验效果是出来了，勉强能看吧：
 
 <p align="center">
-    <img src="/assets/img/dataset/face5.png">
+    <img src="/assets/img/dataset/face5.png" height = '400px'>
 </p>
 
 # 温馨提示 #
