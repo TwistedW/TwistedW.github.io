@@ -148,11 +148,11 @@ GAN这一部分的损失：
 
 当z为Random情况下：
 
-![](/assets/img/CrossModal/BicycleGAN19.jpg)
+![](/assets/img/CrossModal/BicycleGAN20.jpg)
 
 当z的第一维为线性时候：
 
-![](/assets/img/CrossModal/BicycleGAN20.jpg)
+![](/assets/img/CrossModal/BicycleGAN19.jpg)
 
 # 总结 # 
 
