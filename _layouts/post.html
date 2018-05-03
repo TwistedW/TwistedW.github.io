@@ -41,19 +41,19 @@ layout: default
   </div>
 
 <div id="gitmentContainer"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
 <script>
-var gitment = new Gitment({
-    owner: 'TwistedW',
-    repo: 'TwistedW.github.io',
-    oauth: {
-        id: '<%= page.date %>',
-        client_id: '4399884d932674191ee8',
-        client_secret: '8d77ba236dae14003d2e471c72449b03cfd50d1e',
-    },
-});
-gitment.render('gitmentContainer');
+	var gitment = new Gitment({
+		id: '<%= page.date %>',
+		owner: 'TwistedW',
+		repo: 'TwistedW.github.io',
+		oauth: {
+			client_id: '4399884d932674191ee8',
+			client_secret: '8d77ba236dae14003d2e471c72449b03cfd50d1e',
+		},
+	});
+	gitment.render('gitmentContainer');
 </script>
   
   {% include duoshuo.html %}
