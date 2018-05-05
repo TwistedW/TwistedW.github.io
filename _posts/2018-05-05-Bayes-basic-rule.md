@@ -59,7 +59,7 @@ A 是下雨，条件概率是指在阴天的情况下下雨的概率，我们将
    
 $$P(A,B) = P(A|B) \cdot P(B) = P(B|A) \cdot P(A)$$
 
-通过移项，我们可以得到：
+　　通过移项，我们可以得到：
 
 $$
 P(A\vert B) = \frac{P(B|A) \cdot P(A)}{P(B)}　　　(1)
@@ -77,7 +77,7 @@ $$
 
 # 贝叶斯公式 #
 
-　　有了上述的知识点，我们就可以来具体说说贝叶斯公式的具体了。我们上述大胆的尝试得到了公式1，这个公式1其实就是贝叶斯公式了，我们将它写的正规一点，普世一点
+　　有了上述的知识点，我们就可以来具体说说贝叶斯公式的具体了。我们上述大胆的尝试得到了公式1，这个公式1其实就是贝叶斯公式了，我们将它写的正规一点，普世一点。
 
 $$
 P(A_i \vert B) = \frac{P(B\vert A_i) \cdot P(A_i)}{\sum _{j=1}^n P(A_j) \cdot P(B\vert A_j)}　　　(2)
@@ -127,7 +127,7 @@ $$ P(A\vert B) = \frac{True Positive}{True Positive + False Positive} $$
 患病的可能性。假设两次检查的准确率相同，都是99%，这里令 B 为第一次检测结果为阳性，C 为第二次检测结果为阳性，A 为被检测者患病，
 那么两次检测结果都是阳性患病的概率可以表示为：
 
-$$ P(A\vert B \cap C) = P(A)\cdot \frac{P(B \cap C|A)}{P(B \cap C|A)\cdot P(A) + P(B \cap C|\bar A)\cdot P(\bar A)} $$
+$$ P(A\vert (B \cap C)) = P(A)\cdot \frac{P((B \cap C)|A)}{P((B \cap C)|A)\cdot P(A) + P((B \cap C)|\bar A)\cdot P(\bar A)} $$
 
 其中
 
