@@ -63,7 +63,9 @@
 }
 
 .reward .reward-code span.alipay-code {
-	float: left
+	float: left;
+	width: 150px;
+	height: 300px;
 }
 
 .reward .reward-code span.alipay-code a {
@@ -71,7 +73,9 @@
 }
 
 .reward .reward-code span.wechat-code {
-	float: right
+	float: right;
+	width: 150px;
+	height: 300px;
 }
 
 .reward .reward-code img {
