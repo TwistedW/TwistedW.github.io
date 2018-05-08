@@ -43,17 +43,17 @@ $$p\left( \tilde{X} \middle \vert \theta \right) = \prod_{i = 1}^{N}{p(x_{i} \ve
 　　直接对它求极大值（虽然可行但是）不太方便，通常的做法是将似然函数取对数之后再进行极大值的求解：
 
 $$
-\ln{p\left( \tilde{X} \middle \vert \theta \right)} &= \prod_{i = 1}^{N}\ln ({\theta ^{x_i} (1-\theta)^{1 - x_i}}) \\
-&= \sum_{i=1}^{N}(x_{i}\ln \theta + (1- x_{i}) \ln (1 - \theta)) \\
-&= \sum_{i=1}^{N}(x_{i}\ln \theta) + \sum_{i=1}^{N}(1- x_{i}) \ln (1 - \theta)
+\ln{p\left( \tilde{X} \middle \vert \theta \right)} &=& \prod_{i = 1}^{N}\ln ({\theta ^{x_i} (1-\theta)^{1 - x_i}}) \\
+&=& \sum_{i=1}^{N}(x_{i}\ln \theta + (1- x_{i}) \ln (1 - \theta)) \\
+&=& \sum_{i=1}^{N}(x_{i}\ln \theta) + \sum_{i=1}^{N}(1- x_{i}) \ln (1 - \theta)
 $$
 
 　　对参数$$\theta$$求偏导：
 
 $$
-\frac{\partial }{\partial \theta }\ln{p\left( \tilde{X} \middle \vert \theta \right)} &= 
+\frac{\partial }{\partial \theta }\ln{p\left( \tilde{X} \middle \vert \theta \right)} &=& 
 \frac{\partial }{\partial \theta }\lbrack \sum_{i=1}^{N}(x_{i}\ln \theta) + \sum_{i=1}^{N}(1- x_{i}) \ln (1 - \theta)\rbrack \\
-&= \frac{1}{\theta} \sum_{i=1}^{N} x_{i} - \frac{1}{1 - \theta} \sum_{i=1}^{N}(1- x_{i}) 
+&=& \frac{1}{\theta} \sum_{i=1}^{N} x_{i} - \frac{1}{1 - \theta} \sum_{i=1}^{N}(1- x_{i}) 
 $$
 
 　　令偏导为0得到最大解下的参数$$\theta$$的值：
@@ -86,23 +86,23 @@ MAP优化的是一个后验概率，即给定了观测值后使$$ \theta $$概�
 的先验分布。MAP 估计$$\hat{\theta}}_{MAP}$$的定义为：
 
 $$
-\hat{\theta}}_{MAP} &= \arg{\max_\theta{p(\theta \vert \tilde{X})} \\
-&= \arg{\max_\theta{}\frac{p(\tilde{X} \vert \theta) p(\theta)}{p(\tilde{X})}} \\
-&= \arg{\max_\theta{} \frac{p(\theta) \prod_{i = 1}^{N}{p(x_{i} \vert \theta)}}{p(\tilde{X})}} 
+\hat{\theta}}_{MAP} &=& \arg{\max_\theta{p(\theta \vert \tilde{X})} \\
+&=& \arg{\max_\theta{}\frac{p(\tilde{X} \vert \theta) p(\theta)}{p(\tilde{X})}} \\
+&=& \arg{\max_\theta{} \frac{p(\theta) \prod_{i = 1}^{N}{p(x_{i} \vert \theta)}}{p(\tilde{X})}} 
 $$
 
 　　由于$$p(\tilde{X})$$与参数$$ \theta $$无关，所以上式可写为：
 
 $$
 \arg{\max_\theta{}\frac{p(\tilde{X} \vert \theta) p(\theta)}{p(\tilde{X})}} \\
-&= \arg{\max_\theta{} p(\theta) \prod_{i = 1}^{N}{p(x_{i} \vert \theta)}}
+= \arg{\max_\theta{} p(\theta) \prod_{i = 1}^{N}{p(x_{i} \vert \theta)}}
 $$
 
 　　同样的，为了计算简洁，我们通常对上式取对数：
 
-&&
+$$
 {\hat{\theta}}_{\text{MAP}} = \arg{\max_\theta{\ln{p(\theta|\tilde{X})} = \arg{\max_\theta\left\lbrack \ln{p\left( \theta \right)} + \sum_{i = 1}^{N}{\ln{p\left( x_{i} \middle| \theta \right)}} \right\rbrack}}}
-&&
+$$
 
 　　可以看到，从形式上、极大后验概率估计只比极大似然估计多了$$\ln{p(\theta)}$$这一项，不过它们背后的思想却相当不同。不过有意思的是，
 在之后具体讨论朴素贝叶斯算法时我们会看到、朴素贝叶斯在估计参数时选用了极大似然估计法、但是在做决策时则选用了 MAP 估计。和极大似然估计相比，
