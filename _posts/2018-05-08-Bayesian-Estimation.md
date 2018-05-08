@@ -91,7 +91,7 @@ MAP优化的是一个后验概率，即给定了观测值后使$$ \theta $$概�
 
 $$
 \begin{eqnarray}
-{\hat{\theta}}_{\text{MAP}} &=& \arg{\max_\theta{p(\theta \vert \tilde{X})} \\
+\hat{\theta}}_{\text{MAP}} &=& \arg{\max_\theta{p(\theta \vert \tilde{X})} \\
 &=& \arg{\max_\theta{}\frac{p(\tilde{X} \vert \theta) p(\theta)}{p(\tilde{X})}} \\
 &=& \arg{\max_\theta{} \frac{p(\theta) \prod_{i = 1}^{N}{p(x_{i} \vert \theta)}}{p(\tilde{X})}} 
 \end{eqnarray}
