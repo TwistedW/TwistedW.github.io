@@ -53,9 +53,11 @@ $$
 　　对参数$$\theta$$求偏导：
 
 $$
+\begin{eqnarray}
 \frac{\partial }{\partial \theta }\ln{p\left( \tilde{X} \middle \vert \theta \right)} &=& 
 \frac{\partial }{\partial \theta }\lbrack \sum_{i=1}^{N}(x_{i}\ln \theta) + \sum_{i=1}^{N}(1- x_{i}) \ln (1 - \theta)\rbrack \\
 &=& \frac{1}{\theta} \sum_{i=1}^{N} x_{i} - \frac{1}{1 - \theta} \sum_{i=1}^{N}(1- x_{i}) 
+\end{eqnarray}
 $$
 
 　　令偏导为0得到最大解下的参数$$\theta$$的值：
@@ -85,12 +87,14 @@ MAP优化的是一个后验概率，即给定了观测值后使$$ \theta $$概�
 　　在讨论 MAP 估计之前，我们有必要先知道何为后验概率$$p(\theta|\tilde{X})$$：它可以理解为参数$$ \theta $$在训练集$$\tilde X$$下所谓的“真实的出现概率”，
 能够利用参数的先验概率$$p\left( \theta \right)$$、样本的先验概率$$p(\tilde{X})$$和条件概率$$p\left( \tilde{X}|\theta \right) = \prod_{i = 1}^{N}{p\left( x_{i}|\theta \right)}$$来计算得到。
 这中间其实做了一个贝叶斯变换，我们待会解说。MAP 估计的核心思想就是将待估参数$$ \theta $$看成是一个随机变量、从而引入了极大似然估计里面没有引入的、参数$$ \theta $$
-的先验分布。MAP 估计$$\hat{\theta}}_{MAP}$$的定义为：
+的先验分布。MAP 估计$${\hat{\theta}}_{\text{MAP}}$$的定义为：
 
 $$
-\hat{\theta}}_{MAP} &=& \arg{\max_\theta{p(\theta \vert \tilde{X})} \\
+\begin{eqnarray}
+{\hat{\theta}}_{\text{MAP}} &=& \arg{\max_\theta{p(\theta \vert \tilde{X})} \\
 &=& \arg{\max_\theta{}\frac{p(\tilde{X} \vert \theta) p(\theta)}{p(\tilde{X})}} \\
 &=& \arg{\max_\theta{} \frac{p(\theta) \prod_{i = 1}^{N}{p(x_{i} \vert \theta)}}{p(\tilde{X})}} 
+\end{eqnarray}
 $$
 
 　　由于$$p(\tilde{X})$$与参数$$ \theta $$无关，所以上式可写为：
