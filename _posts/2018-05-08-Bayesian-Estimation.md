@@ -43,9 +43,11 @@ $$p\left( \tilde{X} \middle \vert \theta \right) = \prod_{i = 1}^{N}{p(x_{i} \ve
 　　直接对它求极大值（虽然可行但是）不太方便，通常的做法是将似然函数取对数之后再进行极大值的求解：
 
 $$
+\begin{eqnarray}
 \ln{p\left( \tilde{X} \middle \vert \theta \right)} &=& \prod_{i = 1}^{N}\ln ({\theta ^{x_i} (1-\theta)^{1 - x_i}}) \\
 &=& \sum_{i=1}^{N}(x_{i}\ln \theta + (1- x_{i}) \ln (1 - \theta)) \\
 &=& \sum_{i=1}^{N}(x_{i}\ln \theta) + \sum_{i=1}^{N}(1- x_{i}) \ln (1 - \theta)
+\end{eqnarray}
 $$
 
 　　对参数$$\theta$$求偏导：
