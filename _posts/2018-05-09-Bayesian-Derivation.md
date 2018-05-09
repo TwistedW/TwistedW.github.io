@@ -54,7 +54,7 @@ $$
 $$
 I\left( y_{i} \neq f\left( x_{i} \right) \right) = \left\{ \begin{matrix}
 1,\ if\ y_{i} \neq f\left( x_{i} \right) \\
-0,if\ y_{i} \eq f\left( x_{i} \right) \\
+0,if\ y_{i} = f\left( x_{i} \right) \\
 \end{matrix} \right.\
 $$
 
@@ -111,8 +111,8 @@ $$
 
 $$
 \begin{eqnarray}
-  n_{s} &= \sum_{i = 1}^{N}{I\left( y_{i} = c_{s} \right)} \\
-  n_{j,l}^{k} &= \sum_{i = 1}^{N}{I\left( x_{i}^{\left( j \right)} = a_{jl}{,y}_{i} = c_{k} \right)}
+  n_{s} &=& \sum_{i = 1}^{N}{I\left( y_{i} = c_{s} \right)} \\
+  n_{j,l}^{k} &=& \sum_{i = 1}^{N}{I\left( x_{i}^{\left( j \right)} = a_{jl}{,y}_{i} = c_{k} \right)}
 \end{eqnarray}
 $$
 
@@ -151,8 +151,8 @@ $$\frac{\partial L_{1}}{\partial\theta_{k}} = \frac{\partial L_{1}}{\partial\alp
 
 $$
 \begin{eqnarray}
-  p\left( Y = c_{k} \right) = \theta^{k} = \frac{n_{k}}{N} = \frac{\sum_{i = 1}^{N}{I(y_{i} = c_{k})}}{N} \\
-  \alpha = - \frac{N}{K}
+  p\left( Y = c_{k} \right) = \theta^{k} &=& \frac{n_{k}}{N} = \frac{\sum_{i = 1}^{N}{I(y_{i} = c_{k})}}{N} \\
+  \alpha &=& - \frac{N}{K}
 \end{eqnarray}
 $$
 
