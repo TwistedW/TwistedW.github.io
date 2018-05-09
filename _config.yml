@@ -7,7 +7,7 @@ markdown: kramdown
 kramdown:
   input: GFM
 
-highlighter: rouge
+highlighter: true
 
 
 # 作者信息
