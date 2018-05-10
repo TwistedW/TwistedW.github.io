@@ -78,7 +78,7 @@ $$
 
 　　在正式推导前，我们先说明一下符号约定：
 
-- 记已有的数据为，也就是训练集$$\tilde X=(x_1,x_2,...,x_N)$$,其中：
+记已有的数据为，也就是训练集$$\tilde X=(x_1,x_2,...,x_N)$$,其中：
 
 $$
 x_{i} = \left( x_{i}^{\left( 1 \right)},x_{i}^{\left( 2 \right)},\cdots,x_{i}^{\left( n \right)} \right)^{T}\ (i = 1,2,\cdots,N)
