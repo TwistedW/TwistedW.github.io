@@ -1333,7 +1333,7 @@ div.contentAbstract img{
   margin-left: -3em;
   padding-left: 3em;}
  
-@media (max-width: 992px) {
+@media (max-width: 500px) {
 	.post-header  {
 		margin-left: -1.5em;
 		padding-left: 1.5em;
