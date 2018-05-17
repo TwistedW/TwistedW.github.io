@@ -1347,7 +1347,7 @@ div.contentAbstract img{
   letter-spacing: -1px;
   line-height: 1; }
   
-  @media (max-width: 992px) {
+  @media (max-width: 1200px) {
 		.post-title  {
 			font-size: 1.4em;
 		}
