@@ -11,7 +11,7 @@ description:
 
 # 朴素贝叶斯算法流程 #
 
-朴素贝叶斯在实现过程中有一个基础假设，这个我们在概念推导那一篇博客中也有所讲到，我们再稍微重复一下。
+　　朴素贝叶斯在实现过程中有一个基础假设，这个我们在概念推导那一篇博客中也有所讲到，我们再稍微重复一下。
 
 **独立性假设：** $$X_i$$假设单一样本的 n 个维度$$X_i^{(1)},...,X_i^{(n)}$$彼此之间在各种意义上相互独立。
 
@@ -19,11 +19,11 @@ description:
 
 **整体公式**（假设输入有 N 个、单个样本是 n 维的、一共有 K 类：$$c_1,...,c_K$$）
 
-计算先验概率的极大似然估计：
+　　计算先验概率的极大似然估计：
 
 $$\hat p(y=c_k)=\frac{\sum_{i=1}^NI(y_i=c_k)}{N},k=1,2,...,K$$
 
-计算条件概率的极大似然估计： 
+　　计算条件概率的极大似然估计： 
 
 $$\hat p(x^{(j)}=a_{jl}|y=c_k)=\frac{\sum_{i=1}^NI(x_i^{(j)}=a_{jl},y_i=c_k)}{\sum_{i=1}^NI(y_i=c_k)}$$
 
@@ -33,45 +33,45 @@ $$\hat p(x^{(j)}=a_{jl}|y=c_k)=\frac{\sum_{i=1}^NI(x_i^{(j)}=a_{jl},y_i=c_k)}{\s
 
 $$y=f(x^*)=\arg\max_{c_k}\hat p(y=c_k)\prod_{i=1}^n\hat p(x^{(i)}=x^{*(i)}|y=c_k)$$
 
-上述的这些公式都有在上一篇博客中推到过，详细请看[这里](https://twistedw.github.io/2018/05/09/Bayesian-Derivation.html)。
+　　上述的这些公式都有在上一篇博客中推到过，详细请看[这里](https://twistedw.github.io/2018/05/09/Bayesian-Derivation.html)。
 
-在整体朴素贝叶斯下一般来说会衍生出以下三种不同的模型：
+　　在整体朴素贝叶斯下一般来说会衍生出以下三种不同的模型：
 
 - 离散型朴素贝叶斯（MultinomialNB）：所有维度的特征都是离散型随机变量
 - 连续型朴素贝叶斯（GaussianNB）：所有维度的特征都是连续型随机变量
 - 混合型朴素贝叶斯（MergedNB）：各个维度的特征有离散型也有连续型
 
-在接下来的讨论中我们只来说明离散朴素贝叶斯的相关应用。
+　　在接下来的讨论中我们只来说明离散朴素贝叶斯的相关应用。
 
 # 朴素贝叶斯与贝叶斯决策论的联系 #
 
-朴素贝叶斯的模型参数即是类别的选择空间：
+　　朴素贝叶斯的模型参数即是类别的选择空间：
 
 $$\Theta = \left\{ y = c_{1},{y = c}_{2},\ldots,{y = c}_{K} \right\}$$
 
-朴素贝叶斯总的参数空间$$\tilde{\Theta}$$本应包括模型参数的先验概率$$p\left( \theta_{k} \right) = p(y = c_{k})$$、样本空间在模型参数下的条件概率
+　　朴素贝叶斯总的参数空间$$\tilde{\Theta}$$本应包括模型参数的先验概率$$p\left( \theta_{k} \right) = p(y = c_{k})$$、样本空间在模型参数下的条件概率
 $$p\left( X \middle \vert \theta_{k} \right) = p(X \vert y = c_{k})$$和样本空间本身的概率$$p(X)$$；但由于我们采取样本空间的子集
 $$\tilde{X}$$作为训练集，所以在给定的$$\tilde{X}$$下$$p\left( X \right) = p(\tilde{X})$$是常数，因此可以把它从参数空间中删去。
 换句话说，我们关心的东西只有模型参数的先验概率和样本空间在模型参数下的条件概率:
 
 $$\tilde{\Theta} = \left\{ p\left( \theta \right),p\left( X \middle| \theta \right):\theta \in \Theta \right\}$$
 
-行动空间A就是朴素贝叶斯总的参数空间$$\tilde{\Theta}$$
+　　行动空间A就是朴素贝叶斯总的参数空间$$\tilde{\Theta}$$
 
-决策就是后验概率最大化
+　　决策就是后验概率最大化
 
 $$\delta\left( \tilde{X} \right) = \hat{\theta} = \arg{\max_{\tilde\theta\in\tilde\Theta}{p\left( \tilde{\theta} \middle| \tilde{X} \right)}}$$
 
-在$$\hat{\theta}$$ 确定后，模型的决策就可以具体写成（这一步用到了独立性假设）
+　　在$$\hat{\theta}$$ 确定后，模型的决策就可以具体写成（这一步用到了独立性假设）
 
 $$
-\begin{align}
+\begin{eqnarray}
   f\left( x^{*} \right) &=& \arg{\max_{c_k}{\hat{p}\left( c_{k} \middle| X = x^{*} \right)}} \\
   &=& \arg{\max_{c_k}{\hat{p}\left( y = c_{k} \right)\prod_{j = 1}^{n}{\hat{p}\left( X^{\left( j \right)} = {x^{*}}^{\left( j \right)} \middle| y = c_{k} \right)}}}
-\end{align}
+\end{eqnarray}
 $$
 
-损失函数会随模型的不同而不同。在离散型朴素贝叶斯中，损失函数就是比较简单的 0-1 损失函数
+　　损失函数会随模型的不同而不同。在离散型朴素贝叶斯中，损失函数就是比较简单的 0-1 损失函数
 
 $$
 L\left( \theta,\delta\left( \tilde{X} \right) \right) = \sum_{i = 1}^{N}{\tilde{L}\left( y_{i},f\left( x_{i} \right) \right) =}\sum_{i = 1}^{N}{I(}y_{i} \neq f\left( x_{i} \right))
@@ -83,13 +83,13 @@ $$
 
 2.处理（利用 ML 估计导出模型的具体参数）：
 
-计算先验概率$$p(y = c_{k})$$的极大似然估计：
+　　计算先验概率$$p(y = c_{k})$$的极大似然估计：
 
 $$
 \hat{p}\left( y = c_{k} \right) = \frac{\sum_{i = 1}^{N}{I(y_{i} = c_{k})}}{N},\ k = 1,2,\ldots,K
 $$
 
-计算条件概率$$p(X^{\left( j \right)} = a_{jl}|y = c_{k})$$的极大似然估计（设每一个单独输入的 n 维向量$$x_i$$的第 j 维特征$$x^{\left( j \right)}$$
+　　计算条件概率$$p(X^{\left( j \right)} = a_{jl}|y = c_{k})$$的极大似然估计（设每一个单独输入的 n 维向量$$x_i$$的第 j 维特征$$x^{\left( j \right)}$$
 可能的取值集合为$$\{ a_{j1},\ldots,a_{jS_{j}}\}$$:
 
 $$
@@ -102,7 +102,7 @@ $$
 y = f(x^{*}) = \arg{\max_{c_k}{\hat{p}\left( y = c_{k} \right)\prod_{j = 1}^{n}{\hat{p}(X^{\left( j \right)} = {x^{*}}^{\left( j \right)}|y = c_{k})}}}
 $$
 
-综上，朴素贝叶斯算法可以概括为：
+　　综上，朴素贝叶斯算法可以概括为：
 
 - 使用极大似然估计导出模型的具体参数（先验概率、条件概率）
 - 使用极大后验概率估计作为模型的决策（输出使得数据后验概率最大化的类别）
