@@ -15,128 +15,126 @@ description:
 
 　　首先我们来看看我们所知道的数据集数据我们称之为气球数据集1.0。
 
-<div class="table-container">
-<table>
+<table class="table table-striped">
 <thead>
 <tr>
-<th>颜色</th>
-<th>大小</th>
-<th>测试人员</th>
-<th>测试动作</th>
-<th>结果</th>
+    <th>颜色</th>
+    <th>大小</th>
+    <th>测试人员</th>
+    <th>测试动作</th>
+    <th>结果</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>  黄色</td>
-<td>小</td>
-<td>成人</td>
-<td>用手打</td>
-<td>不爆炸</td>
+    <td>  黄色</td>
+    <td>小</td>
+    <td>成人</td>
+    <td>用手打</td>
+    <td>不爆炸</td>
 </tr>
 <tr>
-<td>  黄色</td>
-<td>小</td>
-<td>成人</td>
-<td>用脚踩</td>
-<td>爆炸</td>
+    <td>  黄色</td>
+    <td>小</td>
+    <td>成人</td>
+    <td>用脚踩</td>
+    <td>爆炸</td>
 </tr>
 <tr>
-<td>  黄色</td>
-<td>小</td>
-<td>小孩</td>
-<td>用手打</td>
-<td>不爆炸</td>
+    <td>  黄色</td>
+    <td>小</td>
+    <td>小孩</td>
+    <td>用手打</td>
+    <td>不爆炸</td>
 </tr>
 <tr>
-<td>  黄色</td>
-<td>小</td>
-<td>小孩</td>
-<td>用脚踩</td>
-<td>不爆炸</td>
+    <td>  黄色</td>
+    <td>小</td>
+    <td>小孩</td>
+    <td>用脚踩</td>
+    <td>不爆炸</td>
 </tr>
 <tr>
-<td>  黄色</td>
-<td>大</td>
-<td>成人</td>
-<td>用手打</td>
-<td>爆炸</td>
+    <td>  黄色</td>
+    <td>大</td>
+    <td>成人</td>
+    <td>用手打</td>
+    <td>爆炸</td>
 </tr>
 <tr>
-<td>  黄色</td>
-<td>大</td>
-<td>成人</td>
-<td>用脚踩</td>
-<td>爆炸</td>
+    <td>  黄色</td>
+    <td>大</td>
+    <td>成人</td>
+    <td>用脚踩</td>
+    <td>爆炸</td>
 </tr>
 <tr>
-<td>  黄色</td>
-<td>大</td>
-<td>小孩</td>
-<td>用手打</td>
-<td>不爆炸</td>
+    <td>  黄色</td>
+    <td>大</td>
+    <td>小孩</td>
+    <td>用手打</td>
+    <td>不爆炸</td>
 </tr>
 <tr>
-<td>  黄色</td>
-<td>大</td>
-<td>小孩</td>
-<td>用脚踩</td>
-<td>爆炸</td>
+    <td>  黄色</td>
+    <td>大</td>
+    <td>小孩</td>
+    <td>用脚踩</td>
+    <td>爆炸</td>
 </tr>
 <tr>
-<td>  紫色</td>
-<td>小</td>
-<td>成人</td>
-<td>用手打</td>
-<td>不爆炸</td>
+    <td>  紫色</td>
+    <td>小</td>
+    <td>成人</td>
+    <td>用手打</td>
+    <td>不爆炸</td>
 </tr>
 <tr>
-<td>  紫色</td>
-<td>小</td>
-<td>小孩</td>
-<td>用手打</td>
-<td>不爆炸</td>
+    <td>  紫色</td>
+    <td>小</td>
+    <td>小孩</td>
+    <td>用手打</td>
+    <td>不爆炸</td>
 </tr>
 <tr>
-<td>  紫色</td>
-<td>大</td>
-<td>成人</td>
-<td>用脚踩</td>
-<td>爆炸</td>
+    <td>  紫色</td>
+    <td>大</td>
+    <td>成人</td>
+    <td>用脚踩</td>
+    <td>爆炸</td>
 </tr>
 <tr>
-<td>  紫色</td>
-<td>大</td>
-<td>小孩</td>
-<td>用脚踩</td>
-<td>爆炸</td>
+    <td>  紫色</td>
+    <td>大</td>
+    <td>小孩</td>
+    <td>用脚踩</td>
+    <td>爆炸</td>
 </tr>
 </tbody>
 </table>
-</div>
+
 
 　　我们想预测的样本为：
 
-<div class="table-container">
-<table>
+<table class="table table-striped">
 <thead>
 <tr>
-<th>颜色</th>
-<th>大小</th>
-<th>测试人员</th>
-<th>测试动作</th>
+    <th>颜色</th>
+    <th>大小</th>
+    <th>测试人员</th>
+    <th>测试动作</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>  紫色</td>
-<td>小</td>
-<td>小孩</td>
-<td>用脚踩</td>
+    <td>  紫色</td>
+    <td>小</td>
+    <td>小孩</td>
+    <td>用脚踩</td>
 </tr>
 </tbody>
 </table>
-</div>
+
 
 　　拿到这个样本我们要判断这些行为是否会导致气球爆炸，我们这时候就需要借助贝叶斯思想了。通过简单分析我们拿到的数据集容易观察到的是气球的颜色对结果不起丝毫影响，
 所以在算法中该项特征可以直接去掉。因此从直观上来说，该样本所导致的结果应该是“不爆炸”，我们用离散型朴素贝叶斯算法来看看是否确实如此。
@@ -173,13 +171,13 @@ $$\hat{p}\left( 爆炸\right) = p\left( 小气球\middle| 爆炸\right) \times p
 $$\hat{p}\left( X^{\left( j \right)} = a_{jl} \middle| y = c_{k} \right)$$就是 0、从而导致模型可能会在测试集上的分类产生误差。
 解决这个问题的办法是在各个估计中加入平滑项（也有这种做法就叫贝叶斯估计的说法）：
 
-**操作**
+　　**具体操作：**
 
-　　计算先验概率$$p_{\lambda}(y = c_{k})$$:
+　　计算先验概率$$p_{\lambda}(y = c_{k})$$：
 
 $$p_{\lambda}\left( y = c_{k} \right) = \frac{\sum_{i = 1}^{N}{I\left( y_{i} = c_{k} \right) + \lambda}}{N + K\lambda},\ k = 1,2,\ldots,K$$
 
-　　计算条件概率$$p_{\lambda}(X^{\left( j \right)} = a_{jl}|y = c_{k})$$:
+　　计算条件概率$$p_{\lambda}(X^{\left( j \right)} = a_{jl}|y = c_{k})$$：
 
 $$
 p_{\lambda}\left( X^{\left( j \right)} = a_{jl} \middle| y = c_{k} \right) = \frac{\sum_{i = 1}^{N}{I\left( x_{i}^{\left( j \right)} = a_{jl},y_{i} = c_{k} \right) + \lambda}}{\sum_{i = 1}^{N}{I(y_{i} = c_{k})} + S_{j}\lambda}
@@ -188,105 +186,103 @@ $$
 　　可见当$$\lambda = 0$$时就是极大似然估计，而当$$\lambda = 1$$一般可以称之为拉普拉斯平滑（Laplace Smoothing）。拉普拉斯平滑是常见的做法、
 我们的实现中也会默认使用它。可以将气球数据集 1.0 稍作变动以彰显加入平滑项的重要性（新数据集如下表所示，不妨称之为气球数据集 1.5）：
 
-<div class="table-container">
-<table>
+<table class="table table-striped">
 <thead>
 <tr>
-<th>颜色</th>
-<th>大小</th>
-<th>测试人员</th>
-<th>测试动作</th>
-<th>结果</th>
+    <th>颜色</th>
+    <th>大小</th>
+    <th>测试人员</th>
+    <th>测试动作</th>
+    <th>结果</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>  黄色</td>
-<td>小</td>
-<td>成人</td>
-<td>用手打</td>
-<td>不爆炸</td>
+    <td>  黄色</td>
+    <td>小</td>
+    <td>成人</td>
+    <td>用手打</td>
+    <td>不爆炸</td>
 </tr>
 <tr>
-<td>  黄色</td>
-<td>小</td>
-<td>成人</td>
-<td>用脚踩</td>
-<td>爆炸</td>
+    <td>  黄色</td>
+    <td>小</td>
+    <td>成人</td>
+    <td>用脚踩</td>
+    <td>爆炸</td>
 </tr>
 <tr>
-<td>  黄色</td>
-<td>小</td>
-<td>小孩</td>
-<td>用手打</td>
-<td>不爆炸</td>
+    <td>  黄色</td>
+    <td>小</td>
+    <td>小孩</td>
+    <td>用手打</td>
+    <td>不爆炸</td>
 </tr>
 <tr>
-<td>  黄色</td>
-<td>小</td>
-<td>小孩</td>
-<td>用脚踩</td>
-<td>爆炸</td>
+    <td>  黄色</td>
+    <td>小</td>
+    <td>小孩</td>
+    <td>用脚踩</td>
+    <td>爆炸</td>
 </tr>
 <tr>
-<td>  黄色</td>
-<td>小</td>
-<td>小孩</td>
-<td>用脚踩</td>
-<td>爆炸</td>
+    <td>  黄色</td>
+    <td>小</td>
+    <td>小孩</td>
+    <td>用脚踩</td>
+    <td>爆炸</td>
 </tr>
 <tr>
-<td>  黄色</td>
-<td>小</td>
-<td>小孩</td>
-<td>用脚踩</td>
-<td>爆炸</td>
+    <td>  黄色</td>
+    <td>小</td>
+    <td>小孩</td>
+    <td>用脚踩</td>
+    <td>爆炸</td>
 </tr>
 <tr>
-<td>  黄色</td>
-<td>大</td>
-<td>成人</td>
-<td>用手打</td>
-<td>爆炸</td>
+    <td>  黄色</td>
+    <td>大</td>
+    <td>成人</td>
+    <td>用手打</td>
+    <td>爆炸</td>
 </tr>
 <tr>
-<td>  黄色</td>
-<td>大</td>
-<td>成人</td>
-<td>用脚踩</td>
-<td>爆炸</td>
+    <td>  黄色</td>
+    <td>大</td>
+    <td>成人</td>
+    <td>用脚踩</td>
+    <td>爆炸</td>
 </tr>
 <tr>
-<td>  黄色</td>
-<td>大</td>
-<td>小孩</td>
-<td>用手打</td>
-<td>不爆炸</td>
+    <td>  黄色</td>
+    <td>大</td>
+    <td>小孩</td>
+    <td>用手打</td>
+    <td>不爆炸</td>
 </tr>
 <tr>
-<td>  紫色</td>
-<td>小</td>
-<td>成人</td>
-<td>用手打</td>
-<td>不爆炸</td>
+    <td>  紫色</td>
+    <td>小</td>
+    <td>成人</td>
+    <td>用手打</td>
+    <td>不爆炸</td>
 </tr>
 <tr>
-<td>  紫色</td>
-<td>小</td>
-<td>小孩</td>
-<td>用手打</td>
-<td>不爆炸</td>
+    <td>  紫色</td>
+    <td>小</td>
+    <td>小孩</td>
+    <td>用手打</td>
+    <td>不爆炸</td>
 </tr>
 <tr>
-<td>  紫色</td>
-<td>大</td>
-<td>小孩</td>
-<td>用手打</td>
-<td>不爆炸</td>
+    <td>  紫色</td>
+    <td>大</td>
+    <td>小孩</td>
+    <td>用手打</td>
+    <td>不爆炸</td>
 </tr>
 </tbody>
 </table>
-</div>
 
 　　可以看到这个数据集是“不太均衡”的：它对样本“黄色小气球，小孩用脚踩”重复进行了三次实验、而对所有紫色气球样本实验的结果都是“不爆炸”。
 如果我们此时想预测“紫色小气球，小孩用脚踩”的结果，虽然从直观上来说应该是“爆炸”，但我们会发现、此时由于
