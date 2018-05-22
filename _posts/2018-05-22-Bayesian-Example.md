@@ -177,7 +177,7 @@ $$\hat{p}\left( X^{\left( j \right)} = a_{jl} \middle| y = c_{k} \right)$$就是
 
 $$p_{\lambda}\left( y = c_{k} \right) = \frac{\sum_{i = 1}^{N}{I\left( y_{i} = c_{k} \right) + \lambda}}{N + K\lambda},\ k = 1,2,\ldots,K$$
 
-　　计算条件概率$$p_{\lambda}(X^{\left( j \right)} = a_{jl}|y = c_{k})$$：
+　　计算条件概率$$p_{\lambda}(X^{\left( j \right)} = a_{jl} \vert y = c_{k})$$：
 
 $$
 p_{\lambda}\left( X^{\left( j \right)} = a_{jl} \middle| y = c_{k} \right) = \frac{\sum_{i = 1}^{N}{I\left( x_{i}^{\left( j \right)} = a_{jl},y_{i} = c_{k} \right) + \lambda}}{\sum_{i = 1}^{N}{I(y_{i} = c_{k})} + S_{j}\lambda}
