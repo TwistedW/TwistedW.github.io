@@ -20,7 +20,7 @@ $(document).ready(function() {
 		
 		$("pre").addClass("prettyprint linenums");
     		prettyPrint();
-			pjax_loadChart();
+			// pjax_loadChart();
     		
 		$('.navbar-wrapper').stickUp();
 		$("a#single_image").fancybox();		
@@ -67,7 +67,7 @@ $(document).ready(function() {
 			                        $(this).find('img').stop().animate({top: 0}, 300);
 			                    }
 			    );
-				pjax_loadChart();
+				// pjax_loadChart();
 				 
 								  
 	  });
