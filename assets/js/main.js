@@ -42,9 +42,9 @@ $(document).ready(function() {
 	  });
 	    
 	
-	$(document).on('pjax:send', function() { //pjax链接点击后显示加载动画；
-	    $(".pjax_loading").css("display", "block");
-	});
+	// $(document).on('pjax:send', function() { //pjax链接点击后显示加载动画；
+	//     $(".pjax_loading").css("display", "block");
+	// });
 	
 	 $(document).on('pjax:complete', function() {
 				$.getScript("http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML", function(){
