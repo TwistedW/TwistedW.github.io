@@ -55,8 +55,6 @@ $(document).ready(function() {
 				
 				prettyPrint();
 				
-	 	 		pajx_loadDuoshuo();//pjax加载完成之后调用重载多说函数
-				
 	 	 		$(".pjax_loading").css("display", "none");
  	 		   
 		        $('.bookpiclist .bookpic').hover(
