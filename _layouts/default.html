@@ -26,13 +26,13 @@
 				</div>
 				
 				<div class="tag-cloud-text">
-					<a href="http://twistedw.github.io/pages/tags.html" title="标签" class="pjaxlink"><p class="center">标签</p></a>
+					<a href="http://www.twistedwg.com/pages/tags.html" title="标签" class="pjaxlink"><p class="center">标签</p></a>
 				</div>
 				<div class="tag-cloud ">	
 					<hr>
 					<div class="page-tag">
 							{% for tag in site.tags %}
-								<a href="http://twistedw.github.io/pages/tags.html#{{tag[0]}}" name="{{tag[0]}}" class="pjaxlink"><i class="fa fa-tags"></i>{{ tag[0] }}({{tag[1].size}})</a>
+								<a href="http://www.twistedwg.com/pages/tags.html#{{tag[0]}}" name="{{tag[0]}}" class="pjaxlink"><i class="fa fa-tags"></i>{{ tag[0] }}({{tag[1].size}})</a>
 							{% endfor %}
 					</div>					
 				</div>
