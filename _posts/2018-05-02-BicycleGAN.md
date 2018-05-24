@@ -26,7 +26,7 @@ description:
 这有助于防止在训练期间从隐编码到输出之间形成多对一映射（也称为模式崩溃问题），导致产生更多不同的结果。文章通过利用不同的训练目标、不同的网络结构和不同的隐编码注入方式，
 来探索这种方法的几种不同的变体。文章提出的方法激励隐编码和输出模式之间的双射一致性（bijective consistency），所以文章称之为BicycleGAN。
 
-文章结合了VAE—GAN的思想，我之前也有介绍过VAE-GAN可以移至[这里](https://twistedw.github.io/2018/01/31/VAE+GAN.html)详细查看。
+文章结合了VAE—GAN的思想，我之前也有介绍过VAE-GAN可以移至[这里](http://www.twistedwg.com/2018/01/31/VAE+GAN.html)详细查看。
 文章创新在于提出了cLR-GAN(Conditional Latent Regressor GAN)，我们看看文章是如何描述的。
 
 -cVAE-GAN（条件变分自编码GAN）：是一种通过VAEs学习输出的隐编码分布，进而建模多模式输出分布的方法。在条件设置（类似于无条件模拟）中，

@@ -11,7 +11,7 @@ description:
 
 # 什么是贝叶斯决策 # 
 
-　　贝叶斯决策（Bayesian Decision Theory）就是在不完全情报下，对部分未知的状态用主观概率估计，然后用[贝叶斯公式](https://twistedw.github.io/2018/05/05/Bayes-basic-rule.html)对发生概率进行修正，
+　　贝叶斯决策（Bayesian Decision Theory）就是在不完全情报下，对部分未知的状态用主观概率估计，然后用[贝叶斯公式](http://www.twistedwg.com/2018/05/05/Bayes-basic-rule.html)对发生概率进行修正，
 最后再利用期望值和修正概率做出最优决策。贝叶斯决策属于风险型决策，决策者虽不能控制客观因素的变化，但却掌握其变化的可能状况及各状况的分布概率，
 并利用期望值即未来可能出现的平均状况作为决策准则。
 

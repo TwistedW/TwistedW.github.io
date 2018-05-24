@@ -33,7 +33,7 @@ $$\hat p(x^{(j)}=a_{jl}|y=c_k)=\frac{\sum_{i=1}^NI(x_i^{(j)}=a_{jl},y_i=c_k)}{\s
 
 $$y=f(x^*)=\arg\max_{c_k}\hat p(y=c_k)\prod_{i=1}^n\hat p(x^{(i)}=x^{*(i)}|y=c_k)$$
 
-　　上述的这些公式都有在上一篇博客中推到过，详细请看[这里](https://twistedw.github.io/2018/05/09/Bayesian-Derivation.html)。
+　　上述的这些公式都有在上一篇博客中推到过，详细请看[这里](http://www.twistedwg.com/2018/05/09/Bayesian-Derivation.html)。
 
 　　在整体朴素贝叶斯下一般来说会衍生出以下三种不同的模型：
 

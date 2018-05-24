@@ -1,6 +1,6 @@
 ### 我的博客
 
-地址：[https://twistedw.github.io](https://twistedw.github.io/)
+地址：[http://www.twistedwg.com](http://www.twistedwg.com/)
 
 add comment
 ### 安装说明

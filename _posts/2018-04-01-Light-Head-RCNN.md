@@ -43,7 +43,7 @@ R-FCN主要解决了Faster RCNN中ROI Pooling层后重复计算的问题。在R-
 然后用channel数为P^2*（C+1）的1 * 1卷积来生成position-sensitive的score map，也就是Figure2 B中彩色的那些feature map，
 这是分类的支路（回归的支路是用channel数为P^2*（8）的1 * 1卷积来生成，在Figure2中未画出）。然后经过一个PSROI Pooling层生成C+1维的feature map，feature map的大小是P * P，
 该层的输入包含前面一层生成的score map，还包括RPN网络生成的ROI。最后经过一个global average pool层得到C+1维的1 * 1feature map，
-也就是一个vote过程，这C+1维就是对应该ROI的类别概率信息。关于R-FCN算法的详细介绍可以参考：[R-FCN算法简析](https://twistedw.github.io/2018/03/14/RFCN.html)。
+也就是一个vote过程，这C+1维就是对应该ROI的类别概率信息。关于R-FCN算法的详细介绍可以参考：[R-FCN算法简析](http://www.twistedwg.com/2018/03/14/RFCN.html)。
 R-FCN因为要生成额外的一个channel数量较多（channel数量为classes * p * p，如果在COCO数据集上是81 * 7 * 7=3969）的score map作为PSRoI Pooling的输入，所以在存储和时间上都有不少消耗。
 
 Light-Head RCNN 如Figure2 C所示，基本上是在R-FCN基础上做的修改。针对R-FCN中score map的channel数量较大，

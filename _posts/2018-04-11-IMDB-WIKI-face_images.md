@@ -12,7 +12,7 @@ description:
 
 # 数据集简介 #
 IMDB-WIKI 500k+ 是一个包含名人人脸图像、年龄、性别的数据集，图像和年龄、性别信息从 IMDB 和 WiKi 网站抓取，总计 524230 张名人人脸图像及对应的年龄和性别。
-其中，获取自 IMDB 的 460723 张，获取自 WiKi 的 62328 张。具体数据集的下载可在我的另一篇博客中[找到](https://twistedw.github.io/2018/04/09/download-dataset.html).
+其中，获取自 IMDB 的 460723 张，获取自 WiKi 的 62328 张。具体数据集的下载可在我的另一篇博客中[找到](http://www.twistedwg.com/2018/04/09/download-dataset.html).
 
 下图是官方给的IMDB-WIKI 500k+ 里的示例图片，大家看看就好：
 
