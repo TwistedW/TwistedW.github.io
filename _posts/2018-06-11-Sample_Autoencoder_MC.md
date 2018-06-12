@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Improving Sampling From Generative Autoencoders With MC论文解读
+title: Improving Sampling From Generative Autoencoders With Markov Chains论文解读
 category: 技术
 tags: [MC, Autoencoder]
 description: 
@@ -37,7 +37,7 @@ $$Q_\phi (Z\vert X)$$表示条件分布数据样本$$X$$下得到的潜在空间
 $$z_0 \sim P(Z)$$, 实际数据样本服从解码器得到的样本分布$$x_0 \sim P_\theta (X\vert Z=z_0)$$。
 
 　　如果满足上述表述，由全概率的定义有$$\int Q_\phi (Z\vert X) P(x) dX = P(Z)$$，这个等式成立的前提是潜在空间严格服从先验分布，
-如果定义潜在空间服从分布$$\hat{P}(Z)$$，满足上式需$$P(Z) = \hat{P}(Z)$$，但是在训练初期这个等式很难成立，所以上式应写为：
+如果定义潜在空间服从分布$$\hat{P}(Z)$$，满足上式需$$P(Z) = \hat{P}(Z)$$，但是在训练初期由于潜在空间和先验分布并没有很相近这个等式很难成立，所以上式应写为：
 
 $$\int Q_\phi (Z\vert X) P(X) dX = \hat{P}(Z)$$
 
@@ -47,7 +47,7 @@ $$\int P_\theta (X\vert Z) \hat{P}(Z) dZ = P(X)$$
 
 　　通过不断的优化潜在空间分布$$\hat{P}(Z)$$和先验分布$$P(Z)$$间的差距来实现$$P(Z) = \hat{P}(Z)$$，这就是MCMC采样的优点所在，
 避免了一定程度上由于训练导致解码生成的图片的不真实（文中使用unrealistic artifacts描述）。论文中指出MCMC采样可将任何潜在空间移动到可能的学习潜在分布区域，
-意思就是MCMC可以很好的实现潜在空间向先验分布的靠拢，并且不产生不真实的图片。下图是实验的一部分，我们先来分析一下：
+意思就是MCMC可以很好的实现潜在空间向先验分布的靠拢，并且避免产生不真实的图片。下图是实验的一部分，我们先来分析一下：
 
 <p align="center">
     <img src="/assets/img/Bayes/MCAutoencoder2.png">
