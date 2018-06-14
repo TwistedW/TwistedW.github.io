@@ -789,8 +789,8 @@ blockquote {
  * Profile elements style
  */
 .aside1{
-	padding-left: 4em; 
-	padding-right: 1em; 
+	padding-left: 1em;
+	padding-right: 4em;
 	margin-bottom : 1em;
 }
  
@@ -1112,8 +1112,8 @@ div.gavatar a:hover{
  */
  
 .aside2{
-	padding-right : 3em;
-	padding-left : 1em;
+	padding-right : 1em;
+	padding-left : 4em;
 }
 
 @media (max-width: 992px) {
