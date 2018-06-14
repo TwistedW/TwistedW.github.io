@@ -271,7 +271,7 @@
         function C() {
             var Z = Q.getJson();
             var c = Z.dateArray;
-            var Wid = $("#CalendarTab").width();
+            // var Wid = $("#CalendarTab").width();
         
             M("cm").style.height = Z.lines * 38 + 2 + "px";
             M("cm").innerHTML = "";
@@ -317,9 +317,9 @@
             M("cm").appendChild(G);
             F.init(G)
         } return {
-            draw: function (G) {
-                C(G)
-            }
+            // draw: function (G) {
+            //     C(G)
+            // }
         }
     })();
     var F = (function () {
@@ -363,5 +363,5 @@
         })
     } W.init(A);
     Q.init(A);
-    N.draw();
+    // N.draw();
 })();
