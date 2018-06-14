@@ -1,4 +1,4 @@
-<link href="{{ "/assets/css/unical.css"}}" rel="stylesheet"/>
+<link rel="stylesheet" href="{{ "/assets/css/unical.css" | prepend: site.baseurl }}" >
 <p class="copyright text-muted" style="font-size: 10px;">网站已运行<span id="span_dt_dt"></span></p>
 <script language=javascript> 
 	 function show_date_time() { 
@@ -42,4 +42,4 @@
 		</td>
 	</tr>
 </table>
-<script type="text/javascript" src="{{ "/assets/js/unical.js"}}"></script>
+<script type="text/javascript" src="{{ "/assets/js/unical.js" | prepend: site.baseurl}}"></script>
