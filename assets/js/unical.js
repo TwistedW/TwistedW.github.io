@@ -317,9 +317,9 @@
             M("cm").appendChild(G);
             F.init(G)
         } return {
-            // draw: function (G) {
-            //     C(G)
-            // }
+            draw: function (G) {
+                C(G)
+            }
         }
     })();
     var F = (function () {
@@ -363,5 +363,5 @@
         })
     } W.init(A);
     Q.init(A);
-    // N.draw();
+    N.draw();
 })();
