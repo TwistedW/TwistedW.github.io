@@ -1,4 +1,3 @@
-/*日历*/
 (function () {
     var S = navigator.userAgent.indexOf("MSIE") != -1 && !window.opera;
     function M(C) {
@@ -271,7 +270,7 @@
         function C() {
             var Z = Q.getJson();
             var c = Z.dateArray;
-            // var Wid = $("#CalendarTab").width();
+            var Wid = $("#CalendarTab").width();
         
             M("cm").style.height = Z.lines * 38 + 2 + "px";
             M("cm").innerHTML = "";
