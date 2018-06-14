@@ -673,7 +673,8 @@ blockquote {
  	right : 0.5em;
  }
 .navbar-default{
-	  background-image: url(/assets/img/bg5.png);
+	  /*background-image: url(/assets/img/bg5.png);*/
+      background-image: none;
 	  border-width : 0;
 }
 
