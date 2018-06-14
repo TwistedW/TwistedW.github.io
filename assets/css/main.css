@@ -561,17 +561,6 @@ blockquote {
     .site-nav .page-link:not(:first-child) {
       margin-left: 20px; }
 
-    .intro-header {
-      background: no-repeat center center;
-      background-color: #cccccc;
-      background-attachment: scroll;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      background-size: cover;
-      -o-background-size: cover;
-      margin-bottom: 0px;
-      /* 0 on mobile, modify by Hux */}
-
   @media screen and (max-width: 600px) {
     .site-nav {
       position: absolute;
