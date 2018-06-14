@@ -509,13 +509,23 @@ blockquote {
 /**
  * Site header
  */
+/*.site-header {*/
+  /*position : fixed;*/
+  /*left:0;*/
+  /*top:0;*/
+  /*width:100%;*/
+  /*z-index : 5000;*/
+  /*}*/
+
 .site-header {
-  position : fixed;
-  left:0;
-  top:0;
-  width:100%;
-  z-index : 5000;
-  }
+  background: no-repeat center center;
+  background-color: #cccccc;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-bottom: 0px;}
 
 .site-title {
   font-size: 1.4em;
