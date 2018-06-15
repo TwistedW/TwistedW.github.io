@@ -27,6 +27,9 @@
 					<div class="center profile_desc">
 						{{ site.profile_desc }}
 					</div>
+					<div style="text-align: center;">
+						<a onclick="dashangToggle()" class="contactme" title="打赏作者" style="text-decoration:none;" href="javascript:void(0)">打赏</a>
+					</div>
 				</div>
 
 				<div class="clear"></div>
@@ -80,7 +83,8 @@
     </div>
     
     <div class="pjax_loading"></div>
-    
+
+	{% include dashang.html %}
     {% include footer.html %}
 
   </body>
