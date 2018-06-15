@@ -125,8 +125,8 @@
 	height:500px;
 	padding:10px;
 	background-color:#fff;border-radius:10px;
-	position:relative;
-	z-index:1000;left:50%;top:50%;
+	position:fixed;
+	z-index:1000;left:50%;top:55%;
 	margin-left:-280px;margin-top:-280px;
 	border:1px dotted #dedede;
 	display:none;
