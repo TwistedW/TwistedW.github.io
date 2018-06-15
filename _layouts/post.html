@@ -26,13 +26,9 @@ layout: default
   </article>
 </div>
 
-	<div class="reward">
-		<div class="reward-button">赏 <span class="reward-code">
-			<span class="alipay-code"> <img class="alipay-img wdp-appear" src="/assets/img/social/Alipyspeed.png"><b>支付宝打赏</b> </span>
-			<span class="wechat-code"> <img class="wechat-img wdp-appear" src="/assets/img/social/Wechatspeed.png"><b>微信打赏</b> </span> </span>
-		</div>
-		<p class="reward-notice">您的打赏是对我最大的鼓励！</p>
-	</div>
+	<div style="text-align: center;">
+        <a onclick="dashangToggle()" class="contactme" title="打赏作者" style="text-decoration:none;" href="javascript:void(0)">打赏</a>
+    </div>
 
   <div class="prevandnext">
     	  {% if page.next %}
@@ -67,5 +63,19 @@ layout: default
 	});
 	gitment.render('gitmentContainer');
 </script>
+
+<style>
+.contactme{
+    border-radius: 4px;
+	border: 1px solid #1bb3e9;
+    color: #1bb3e9;
+    display: block;
+    font-family: "KaiTi";
+    line-height: 25px;
+    text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+</style>
   
-  {% include duoshuo.html %}
+  {% include dashang.html %}
