@@ -139,13 +139,12 @@
 
 .contactme{
     border-radius: 4px;
-	text-align: center;
 	border: 1px solid #1bb3e9;
     color: #1bb3e9;
     display: block;
+	text-align: center;
     font-family: "KaiTi";
     line-height: 25px;
-    text-align: center;
 	padding-left: 20px;
 	padding-right: 20px;
 	width: 100px;
