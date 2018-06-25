@@ -6,11 +6,7 @@ keywords: 阅读
 books: 
     - title: Python编程从入门到实践
       status: 在读
-<<<<<<< HEAD
       author: [美]埃里克·马瑟斯([Eric Matthes](https://book.douban.com/subject_search?search_text=%E5%9F%83%E9%87%8C%E5%85%8B%C2%B7%E9%A9%AC%E7%91%9F%E6%96%AF)) 
-=======
-      author: [美]埃里克·马瑟斯
->>>>>>> 722892d9491424fb82bd66aa005a4383c4e74a72
       publisher: 人民邮电出版社
       language: 中文，英文
       link: https://book.douban.com/subject/26829016/
