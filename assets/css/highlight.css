@@ -3,6 +3,7 @@ code {
   font-size: 14px;
   color: #f8f8f2;
   background: #d72222;
+  overflow-x: auto;
   letter-spacing: 0.015em;
   line-height: 120%;
   padding: 0.5em;
