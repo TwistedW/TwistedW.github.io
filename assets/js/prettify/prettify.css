@@ -1,8 +1,10 @@
 /* desert scheme ported from vim to google prettify */
-pre{
-  overflow-x: auto;
-}
-pre.prettyprint { display: block; background-color: #333;font-size:14px !important; }
+pre.prettyprint {
+	display: block;
+	background-color: #333;
+	overflow-x: auto;
+	font-size:14px
+!important; }
 /*pre .nocode { background-color: none; color: #000 }*/
 /*pre .str { color: #ffa0a0 } !* string  - pink *!*/
 /*pre .kwd { color: #f0e68c; font-weight: bold }*/
