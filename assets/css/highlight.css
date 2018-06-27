@@ -8,10 +8,6 @@ code {
   padding: 0.5em;
 }
 
-pre{
-  overflow-x: auto;
-}
-
 .highlight {
   color: #f8f8f2;
   background: #373832;
