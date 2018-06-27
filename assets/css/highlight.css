@@ -6,7 +6,10 @@ code {
   letter-spacing: 0.015em;
   line-height: 120%;
   padding: 0.5em;
-  
+}
+
+pre{
+  overflow-x: auto;
 }
 
 .highlight {
