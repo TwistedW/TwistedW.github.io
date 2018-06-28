@@ -18,6 +18,7 @@ code {
 
 .highlight pre code *{
   white-space: pre-wrap;
+  overflow-x: scroll;
 }
 
 .highlight code {
