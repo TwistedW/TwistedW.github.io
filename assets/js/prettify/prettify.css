@@ -28,9 +28,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { }
 
 @media print {
   pre.prettyprint {
-	  overflow-x: scroll;
-	  white-space: pre-wrap;
-	  word-break: break-word;
+	  overflow-x: auto;
   }
   pre .str, code .str { color: #060 }
   pre .kwd, code .kwd { color: #006; font-weight: bold }
