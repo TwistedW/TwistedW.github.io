@@ -6,8 +6,6 @@ code {
   letter-spacing: 0.015em;
   line-height: 120%;
   padding: 0.5em;
-  overflow: scroll;
-  white-space: nowrap;
 }
 
 .highlight {
@@ -16,7 +14,10 @@ code {
   letter-spacing: 0.015em;
   line-height: 120%;
   padding: 0.5em;
-  
+}
+
+.highlight pre code *{
+  white-space: nowrap;
 }
 
 .highlight code {
