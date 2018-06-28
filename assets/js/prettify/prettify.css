@@ -2,8 +2,8 @@
 pre.prettyprint {
 	display: block;
 	background-color: #333;
+	white-space: pre;
 	overflow-x: scroll;
-	white-space: pre-wrap;
 	font-size:14px !important;
 }
 
@@ -29,7 +29,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { }
 
 @media print {
   pre.prettyprint {
-	   white-space: pre-wrap;
+	   white-space: pre;
 	  overflow-x: auto;
   }
   pre .str, code .str { color: #060 }
