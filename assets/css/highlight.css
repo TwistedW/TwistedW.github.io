@@ -17,7 +17,7 @@ code {
 }
 
 .highlight pre code *{
-  white-space: nowrap;
+  white-space: pre-wrap;
 }
 
 .highlight code {
