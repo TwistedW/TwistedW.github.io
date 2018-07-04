@@ -67,7 +67,7 @@ L_{cyc}(G,F) = E_{x \sim p_X(x)}[\Vert F(G(x)) - x \Vert_1] + E_{y \sim p_Y(y)}[
 L_{id}(G,F) = E_{x \sim p_X(x)}[\Vert F(x) - x \Vert_1] + E_{y \sim p_Y(y)}[\Vert G(y) - y \Vert_1]\\
 I_{G,F}(G,F) = L_{adv}^{G} + L_{adv}^{F} + \lambda_{cyc}L_{cyc}(G,F) + \lambda_{id}L_{id}(G,F)\\
 I_D(D_X,D_Y) = L_{adv}^{D_Y} + L_{adv}^{D_Y}
-\end{csses}
+\end{cases}
 $$
 
 其中$$\lambda_{cyc} \geq 0$$，$$\lambda_{id} \geq 0$$。
