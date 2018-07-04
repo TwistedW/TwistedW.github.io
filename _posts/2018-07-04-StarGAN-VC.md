@@ -58,7 +58,7 @@ vector quantized VAE (VQ-VAE)在VAE的基础上使用了Wavenet网络，在处�
 两个判别器，所以对抗损失也有两个；为了保证循环生成的质量，还有一个循环损失；最后为了保证特征学习，再加上一个身份损失（id loss）。
 
 $$
-\begin{align*} 
+\begin{cases} 
 L_{adv}^{D_Y} = -E_{y \sim p_Y(y)}[log D_Y(y)] - E_{x \sim p_X(x)}[log(1 - D_Y(G(x)))]\\
 L_{adv}^{G} = E_{x \sim p_X(x)}[log(1 - D_Y(G(x)))]\\
 L_{adv}^{D_Y} = -E_{x \sim p_X(x)}[log D_X(x)] - E_{y \sim p_Y(y)}[log(1 - D_X(F(y)))]\\
@@ -67,7 +67,7 @@ L_{cyc}(G,F) = E_{x \sim p_X(x)}[\Vert F(G(x)) - x \Vert_1] + E_{y \sim p_Y(y)}[
 L_{id}(G,F) = E_{x \sim p_X(x)}[\Vert F(x) - x \Vert_1] + E_{y \sim p_Y(y)}[\Vert G(y) - y \Vert_1]\\
 I_{G,F}(G,F) = L_{adv}^{G} + L_{adv}^{F} + \lambda_{cyc}L_{cyc}(G,F) + \lambda_{id}L_{id}(G,F)\\
 I_D(D_X,D_Y) = L_{adv}^{D_Y} + L_{adv}^{D_Y}
-\end{align*}
+\end{csses}
 $$
 
 其中$$\lambda_{cyc} \geq 0$$，$$\lambda_{id} \geq 0$$。
@@ -88,7 +88,7 @@ $$
 最后为了保证特征学习，再加上一个身份损失（id loss）。整个网络大方向上有生成器G的损失，判别器D的损失和分类器C的损失。
 
 $$
-\begin{align*} 
+\begin{cases} 
 L_{adv}^{D} = - E_{c \sim p(c),y \sim p(y\vert c)}[log D(y,c)] - E_{x \sim p(x),c \sim p(c)}[log(1 - D(G(x,c),c))]\\
 L_{adv}^{G} = - E_{x \sim p(x),c \sim p(c)}[logD(G(x,c),c)]\\
 L_{cls}^{C}(C) = - E_{c \sim p(c),y \sim p(y\vert c)}[log p_C(c \vert y)]\\
@@ -98,7 +98,7 @@ L_{id}(G) = E_{c' \sim p(c),x \sim p(x \vert c')}[\Vert G(x,c) - x \Vert_\rho]\\
 I_{G}(G) = L_{adv}^{G} + \lambda_{cls}L_{cls}^{G}(G) + \lambda_{cyc}L_{cyc}(G) + \lambda_{id}L_{id}(G)\\
 I_D(D) = L_{adv}^{D}\\
 I_C(C) = L_{cls}^{C}(C)
-\end{align*}
+\end{cases}
 $$
 
 音频之间转换的核心也是将音频转换为声谱图文中称之为声学特征序列，利用图像到图像的关系实现最终的转换。一旦生成的谱增益函数就可以通过频谱增益函数与输入语音的频谱
