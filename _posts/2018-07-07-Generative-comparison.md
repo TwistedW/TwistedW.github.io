@@ -42,10 +42,10 @@ CAE的内部结构如下图：
 提高了重建图像的质量，尤其是在高比特率。整体的损失函数定义为：
 
 $$
-\begin{align}
-J(\theta,\phi;x) &=& \Vert x - \hat{x} \Vert^2 + \lambda \cdot \Vert y \Vert^2\\
+\begin{eqnarray}
+J\left(\theta,\phi;x\right) &=& \Vert x - \hat{x} \Vert^2 + \lambda \cdot \Vert y \Vert^2\\
 &=& \Vert x - g_{\phi}(f_{\theta}(x)+\mu)\Vert^2 + \lambda \cdot \Vert f_{\theta}(x) \Vert^2
-\end{align}
+\end{eqnarray}
 $$
 
 其中$$\Vert x - \hat{x} \Vert^2$$为MSE损失，$$x$$是原始图像$$\hat{x}$$是重构图像，$$\mu$$是均值噪声，$$f_{\theta}(x)$$是$$x$$
