@@ -2,8 +2,6 @@
 pre.prettyprint {
 	display: block;
 	background-color: #333;
-	overflow-x: auto;
-	white-space: pre;
 	font-size:14px !important;
 }
 

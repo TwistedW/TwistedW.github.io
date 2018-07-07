@@ -16,6 +16,11 @@ code {
   padding: 0.5em;
 }
 
+.highlight code *{
+  overflow-x: auto;
+  white-space: pre;
+}
+
 .highlight code {
   font-family: 'Consolas', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
   font-size: 14px;
