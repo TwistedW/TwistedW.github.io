@@ -2,6 +2,8 @@
 pre.prettyprint {
 	display: block;
 	background-color: #333;
+	overflow-x: auto;
+	white-space: pre;
 	font-size:14px !important;
 }
 
@@ -32,8 +34,8 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { }
 
 @media print {
   pre.prettyprint {
-	  white-space: pre;
 	  overflow-x: auto;
+	  white-space: pre;
   }
   pre .str, code .str { color: #060 }
   pre .kwd, code .kwd { color: #006; font-weight: bold }
