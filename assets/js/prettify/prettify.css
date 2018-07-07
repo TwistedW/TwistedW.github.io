@@ -32,7 +32,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { }
 
 @media print {
   pre.prettyprint {
-	  overflow-x: auto;
+	  overflow-x: scroll;
 	  white-space: pre;
   }
   pre .str, code .str { color: #060 }
