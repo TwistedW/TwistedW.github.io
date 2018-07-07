@@ -16,10 +16,10 @@ code {
   padding: 0.5em;
 }
 
-.highlight code *{
-  overflow-x: scroll;
-  white-space: pre;
-}
+/*.highlight code *{*/
+  /*overflow-x: scroll;*/
+  /*white-space: pre;*/
+/*}*/
 
 .highlight code {
   font-family: 'Consolas', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
