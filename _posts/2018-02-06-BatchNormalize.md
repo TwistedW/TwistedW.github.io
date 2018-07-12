@@ -2,7 +2,7 @@
 layout: post
 title: BatchNormalize(批量归一化)
 category: 技术
-tags: [Machine Learning]
+tags: [Machine-Learning]
 description: 
 ---
 
