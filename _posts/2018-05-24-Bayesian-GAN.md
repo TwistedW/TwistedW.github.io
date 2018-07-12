@@ -2,7 +2,7 @@
 layout: post
 title: 论文BayesianGAN解读
 category: 技术
-tags: [GAN,贝叶斯]
+tags: [GAN,Bayesian]
 description: 
 ---
 

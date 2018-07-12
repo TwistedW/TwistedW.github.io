@@ -2,7 +2,7 @@
 layout: post
 title: 凑凑区块链热度
 category: 技术
-tags: [区块链]
+tags: [Blockchain]
 description: 
 ---
 

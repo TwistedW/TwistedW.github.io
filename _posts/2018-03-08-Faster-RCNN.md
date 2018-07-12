@@ -2,7 +2,7 @@
 layout: post
 title: Faster R-CNN简析（基本上都是引用）
 category: 技术
-tags: [目标检测,算法]
+tags: [Objective]
 description: 
 ---
 

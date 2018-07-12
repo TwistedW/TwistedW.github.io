@@ -2,7 +2,7 @@
 layout: post
 title: 贝叶斯公式入门理解
 category: 技术
-tags: [数学]
+tags: [Math]
 description: 
 ---
 

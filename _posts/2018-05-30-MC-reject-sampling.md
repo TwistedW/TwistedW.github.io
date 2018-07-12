@@ -2,7 +2,7 @@
 layout: post
 title: 蒙特卡洛采样之拒绝采样（Reject Sampling） 
 category: 技术
-tags: [MC,贝叶斯]
+tags: [MC,Bayesian]
 description: 
 ---
 

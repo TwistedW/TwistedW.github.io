@@ -2,7 +2,7 @@
 layout: post
 title: 朴素贝叶斯算法
 category: 技术
-tags: [数学,朴素贝叶斯]
+tags: [Math,Bayesian]
 description: 
 ---
 

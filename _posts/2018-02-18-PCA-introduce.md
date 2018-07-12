@@ -2,7 +2,7 @@
 layout: post
 title: PCA原理介绍(不含推理过程)
 category: 技术
-tags: [数学,机器学习]
+tags: [Machine Learning,Math]
 description: 
 ---
 

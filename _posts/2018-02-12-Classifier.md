@@ -2,7 +2,7 @@
 layout: post
 title: 机器学习中常用的分类算法
 category: 技术
-tags: [数学,机器学习]
+tags: [Machine Learning,Math]
 description: 
 ---
 

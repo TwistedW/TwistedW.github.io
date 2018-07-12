@@ -2,7 +2,7 @@
 layout: post
 title:  Light-Head R-CNN简析(转)
 category: 技术
-tags: [目标检测,算法]
+tags: [Objective]
 description: 
 ---
 

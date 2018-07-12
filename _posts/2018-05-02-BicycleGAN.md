@@ -2,7 +2,7 @@
 layout: post
 title: BicycleGAN论文解读
 category: 技术
-tags: [跨模态, GAN]
+tags: [Cross-modal, GAN]
 description: 
 ---
 

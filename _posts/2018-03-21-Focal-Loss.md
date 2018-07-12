@@ -2,7 +2,7 @@
 layout: post
 title: Focal Loss简析(转)
 category: 技术
-tags: [目标检测,算法]
+tags: [Objective]
 description: 
 ---
 

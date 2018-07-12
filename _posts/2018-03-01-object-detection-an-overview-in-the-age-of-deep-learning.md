@@ -2,7 +2,7 @@
 layout: post
 title: 深度学习时代的目标检测算法综述（转）
 category: 技术
-tags: [目标检测,深度学习]
+tags: [Objective]
 description: 
 ---
 

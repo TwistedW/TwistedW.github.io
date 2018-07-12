@@ -2,7 +2,7 @@
 layout: post
 title: 激活函数
 category: 技术
-tags: [数学,机器学习]
+tags: [Machine Learning,Math]
 description: 
 ---
 

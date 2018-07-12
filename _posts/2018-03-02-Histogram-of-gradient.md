@@ -2,7 +2,7 @@
 layout: post
 title: 方向梯度直方图简析 
 category: 技术
-tags: [目标检测,算法]
+tags: [Objective]
 description: 
 ---
 

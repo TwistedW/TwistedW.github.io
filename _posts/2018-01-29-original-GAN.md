@@ -2,7 +2,7 @@
 layout: post
 title: 传统GAN的介绍
 category: 技术
-tags: [机器学习,GAN]
+tags: [Machine Learning,GAN]
 description: 
 ---
 

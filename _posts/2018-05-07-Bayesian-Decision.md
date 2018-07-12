@@ -2,7 +2,7 @@
 layout: post
 title: 贝叶斯决策理论引入篇
 category: 技术
-tags: [数学,朴素贝叶斯]
+tags: [Math,Bayesian]
 description: 
 ---
 

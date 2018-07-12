@@ -2,7 +2,7 @@
 layout: post
 title: StarGAN-VC论文解读
 category: 技术
-tags: [GAN,跨模态]
+tags: [GAN,Cross-modal]
 description: 
 ---
 

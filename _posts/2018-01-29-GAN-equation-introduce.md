@@ -2,7 +2,7 @@
 layout: post
 title: 传统GAN的公式推导
 category: 技术
-tags: [机器学习,GAN,数学]
+tags: [GAN,Math]
 description: 
 ---
 

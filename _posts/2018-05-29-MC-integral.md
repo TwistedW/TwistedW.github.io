@@ -2,7 +2,7 @@
 layout: post
 title: 蒙特卡洛（Monte Carlo）法求定积分 
 category: 技术
-tags: [MC,贝叶斯]
+tags: [MC,Bayesian]
 description: 
 ---
 

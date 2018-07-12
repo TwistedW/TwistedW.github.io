@@ -2,7 +2,7 @@
 layout: post
 title:  入门跨模态我们需要什么基础
 category: 技术
-tags: [跨模态,综述]
+tags: [Cross-modal]
 description: 
 ---
 

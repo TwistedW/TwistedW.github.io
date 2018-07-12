@@ -2,7 +2,7 @@
 layout: post
 title: 数据预处理&权重矩阵初始化
 category: 技术
-tags: [数据处理,机器学习]
+tags: [Machine Learning]
 description: 
 ---
 

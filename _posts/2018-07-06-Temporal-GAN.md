@@ -2,7 +2,7 @@
 layout: post
 title: Temporal GAN论文解读
 category: 技术
-tags: [GAN,时序]
+tags: [GAN]
 description: 
 ---
 
