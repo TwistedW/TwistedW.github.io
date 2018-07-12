@@ -2,7 +2,7 @@
 layout: post
 title: 梯度下降法
 category: 技术
-tags: [Machine Learning,Math]
+tags: [Machine-Learning,Math]
 description: 
 ---
 

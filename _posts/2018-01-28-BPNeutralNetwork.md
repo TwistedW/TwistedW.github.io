@@ -2,7 +2,7 @@
 layout: post
 title: 神经网络入门
 category: 技术
-tags: [Machine Learning]
+tags: [Machine-Learning]
 description: 
 ---
 

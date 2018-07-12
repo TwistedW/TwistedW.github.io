@@ -2,7 +2,7 @@
 layout: post
 title: 各类优化算法
 category: 技术
-tags: [Machine Learning,Math]
+tags: [Machine-Learning,Math]
 description: 
 ---
 

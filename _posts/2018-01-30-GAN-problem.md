@@ -2,7 +2,7 @@
 layout: post
 title: GAN存在的问题
 category: 技术
-tags: [Machine Learning,GAN]
+tags: [Machine-Learning,GAN]
 description: 
 ---
 
