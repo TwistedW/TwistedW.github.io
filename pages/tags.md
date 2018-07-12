@@ -7,7 +7,7 @@ permalink: /pages/tags.html
 <div class="home">
 	<div class="page-tag">
 		{% for tag in site.tags %}
-			<a class="pjaxlink"  href="#target" name="{{tag[0]}}">{{ tag[0] }}({{tag[1].size}})</a>
+			<a class="pjaxlink"  href="#{{tag[0]}}" name="{{tag[0]}}">{{ tag[0] }}({{tag[1].size}})</a>
 		{% endfor %}
 	</div>
 
