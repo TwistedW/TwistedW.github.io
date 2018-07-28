@@ -1,6 +1,6 @@
 ---
 layout: book
-title: 剑指offer 
+title: 提高编程规范和思想 
 category: 读书
 keywords: 阅读
 books: 
