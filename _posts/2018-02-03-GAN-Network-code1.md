@@ -71,7 +71,9 @@ description:
 
 有了上述的网络包装，我们在搭建生成器G将会方便很多。我们先来看看我们的网络的结构：
 
-![](/assets/img/GAN/Gstr.png)
+<p align="center">
+    <img src="/assets/img/GAN/Gstr.png">
+</p>
 
 我们就正式来看看这个G网络的实现代码，其实很简单。
 
@@ -95,7 +97,9 @@ description:
 噪声经过生成器G后就会输出[64,28,28,1]的一批图片，这批图片是fake的，所以要送入判别器D中去判断真假，我们先看看判别器在mnist数据集下的网
 络结构。
 
-![](/assets/img/GAN/Dstr.png)
+<p align="center">
+    <img src="/assets/img/GAN/Dstr.png">
+</p>
 
 我们也要对其中的一些要求包装一下，这里说一下MinibatchLayer是为了缓解GAN训练时候的collapse mode
 

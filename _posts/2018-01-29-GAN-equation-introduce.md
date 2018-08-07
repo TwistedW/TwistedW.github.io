@@ -11,7 +11,9 @@ description:
 GAN是基于最大最小博弈展开的，生成器为了生成出骗过判别器的数据不断的提高生成数据的真实性的能力，判别器为了识别出生成器生成的图片的真假不断
 地提高鉴别真假的能力，到最后两者达到纳什平衡。下图形象的展示了GAN的斗争思想：
 
-![](/assets/img/GAN/DGgame.jpg)
+<p align="center">
+    <img src="/assets/img/GAN/DGgame.jpg">
+</p>
 
 由图优化D的时候需要很好的画出黑色虚线，使它能够区分开真实数据和生成数据。优化G的时候，生成数据更加接近原始数据的样子，使得D难以区分数据
 真假。如此反复直到最后再也画不出区分的黑色虚线。
@@ -27,12 +29,16 @@ GAN是基于最大最小博弈展开的，生成器为了生成出骗过判别�
 
 GAN的目标函数：
 
-![](/assets/img/GAN/objective.jpg)
+<p align="center">
+    <img src="/assets/img/GAN/objective.jpg">
+</p>
 
 从数学上分析这个函数
 首先固定G训练D ：
 
-![](/assets/img/GAN/Dtrain.jpg)
+<p align="center">
+    <img src="/assets/img/GAN/Dtrain.jpg">
+</p>
 
 1）训练D的目的是希望这个式子的值越大越好。真实数据希望被D分成1，生成数据希望被分成0。
 
@@ -46,11 +52,15 @@ GAN的目标函数：
 
 因为目标函数的第一项不包含G，是常数，所以可以直接忽略 不受影响。
 
-![](/assets/img/GAN/Gtrain.jpg)
+<p align="center">
+    <img src="/assets/img/GAN/Gtrain.jpg">
+</p>
 
 对于G来说 它希望D在划分他的时候能够越大越好，他希望被D划分1(真实数据)。
 
-![](/assets/img/GAN/Gtransform.jpg)
+<p align="center">
+    <img src="/assets/img/GAN/Gtransform.jpg">
+</p>
 
 第二个式子和第一个式子等价。在训练的时候，第二个式子训练效果比较好 常用第二个式子的形式。
 
@@ -62,53 +72,75 @@ GAN的目标函数：
 
 全局优化首先固定G优化D，D的最佳情况为：
 
-![](/assets/img/GAN/Doptimizer.jpg)
+<p align="center">
+    <img src="/assets/img/GAN/Doptimizer.jpg">
+</p>
 
 1、证明D*G(x)是最优解
 
 由于V是连续的所以可以写成积分的形式来表示期望：
 
-![](/assets/img/GAN/Dequation1.jpg)
+<p align="center">
+    <img src="/assets/img/GAN/Dequation1.jpg">
+</p>
 
 通过假设x=G(z)可逆进行了变量替换，整理式子后得到：
 
-![](/assets/img/GAN/Dequation2.jpg)
+<p align="center">
+    <img src="/assets/img/GAN/Dequation2.jpg">
+</p>
 
 然后对V(G,D)进行最大化：对D进行优化令V取最大
 
-![](/assets/img/GAN/Dequation3.jpg)
+<p align="center">
+    <img src="/assets/img/GAN/Dequation3.jpg">
+</p>
 
 2、假设我们已经知道D*G(x)是最佳解了，这种情况下G想要得到最佳解的情况是：G产生出来的分布要和真实分布一致，即：
 
-![](/assets/img/GAN/Gequation1.jpg)
+<p align="center">
+    <img src="/assets/img/GAN/Gequation1.jpg">
+</p>
 
-在这个条件下，D*G(x)=1/2。
+在这个条件下，$D*G(x)=\frac{1}{2}$。
 
 接下来看G的最优解是什么，因为D的这时已经找到最优解了，所以只需要调整G ，令
 
-![](/assets/img/GAN/Gequation2.jpg)
+<p align="center">
+    <img src="/assets/img/GAN/Gequation2.jpg">
+</p>
 
 对于D的最优解我们已经知道了，D*G(x)，可以直接把它带进来 并去掉前面的Max
 
-![](/assets/img/GAN/Gequation3.jpg)
+<p align="center">
+    <img src="/assets/img/GAN/Gequation3.jpg">
+</p>
 
 然后对 log里面的式子分子分母都同除以2，分母不动，两个分子在log里面除以2 相当于在log外面 -log(4) 可以直接提出来：
 
-![](/assets/img/GAN/Gequation4.jpg)
+<p align="center">
+    <img src="/assets/img/GAN/Gequation4.jpg">
+</p>
 
 结果可以整理成两个KL散度-log(4)
 
-![](/assets/img/GAN/Gequation5.jpg)
+<p align="center">
+    <img src="/assets/img/GAN/Gequation5.jpg">
+</p>
 
 KL散度是大于等于零的，所以C的最小值是 -log（4）
 
 当且仅当
 
-![](/assets/img/GAN/Gequation6.jpg)
+<p align="center">
+    <img src="/assets/img/GAN/Gequation6.jpg">
+</p>
 
 即
 
-![](/assets/img/GAN/Gequation7.jpg)
+<p align="center">
+    <img src="/assets/img/GAN/Gequation7.jpg">
+</p>
 
 所以证明了 当G产生的数据和真实数据是一样的时候，C取得最小值也就是最佳解。
 由上述推导我们可以得到最后生成器和判别器到达最优的时候，生成器学习到的生成分布其实是趋近于真实数据的分布，这样就达到了生成对抗的目的。最后
@@ -117,8 +149,12 @@ GAN可以生成出近似于真实数据的数据。但是GAN存不存在问题�
 
 最后分享一下我手动推导的公式笔记，大家莫嫌弃：
 
-![](/assets/img/GAN/GANequation1.png)
+<p align="center">
+    <img src="/assets/img/GAN/GANequation1.png">
+</p>
 
-![](/assets/img/GAN/GANequation2.png)
+<p align="center">
+    <img src="/assets/img/GAN/GANequation2.png">
+</p>
 
 谢谢观看，希望对您有所帮助，欢迎指正错误，欢迎一起讨论！！！

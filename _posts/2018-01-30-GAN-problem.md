@@ -21,44 +21,62 @@ WGAN算是有两篇文章，[第一篇](https://arxiv.org/pdf/1701.04862.pdf)是
 
 我们来简单回顾一下，GAN在判别器D训练到最优的时候，生成器C(G)为：
 
-![](/assets/img/GAN_problem/CG.png)
+<p align="center">
+    <img src="/assets/img/GAN_problem/CG.png">
+</p>
 
 其中
 
-![](/assets/img/GAN_problem/JS.png)
+<p align="center">
+    <img src="/assets/img/GAN_problem/JS.png">
+</p>
 
 我们来简单计算一下，在两个分布不相同时，即
 
-![](/assets/img/GAN_problem/DD.png)
+<p align="center">
+    <img src="/assets/img/GAN_problem/DD.png">
+</p>
 
 第一项和第二项的分布没有参考价值，分析第三第四项，以第三项分析代入计算我们可以得到：
 
-![](/assets/img/GAN_problem/PD.png)
+<p align="center">
+    <img src="/assets/img/GAN_problem/PD.png">
+</p>
 
 此时JS散度衡为log2，也就是说C(G)=0,这就导致了GAN在判别器训练的越好的情况下，生成器越容易出现梯度消失情况。当然这时的条件是生成分布和真
 实分布是不重合的。形象一点的话可以看看下图：
 
-![](/assets/img/GAN_problem/FR.png)
+<p align="center">
+    <img src="/assets/img/GAN_problem/FR.png">
+</p>
 
 **GAN存在的第二个问题**
 
 我们再通过公式简单分析一下GAN的第二个问题，在GAN的最优解中有KL散度一项，我们拿出来分析一下
 
-![](/assets/img/GAN_problem/KL.png)
+<p align="center">
+    <img src="/assets/img/GAN_problem/KL.png">
+</p>
 
 通过移项可以得到
 
-![](/assets/img/GAN_problem/KLT.png)
+<p align="center">
+    <img src="/assets/img/GAN_problem/KLT.png">
+</p>
 
 公式中第一项是减小真实数据与生成数据的分布，第二项是增大真实数据与生成数据的分布。这样一拉一收将会导致训练不稳定，生成器到底是增大还是减小
 呢？我们可以做个分析
 
-![](/assets/img/GAN_problem/AKL.png)
+<p align="center">
+    <img src="/assets/img/GAN_problem/AKL.png">
+</p>
 
 在判别器的作用下生成器为了得到最小的惩罚，将会生成更倾向于真实的数据不会冒险生成与已有真实分布不同的数据。我们用一张图展示一下，下图描述了
 GAN生成多样性不足的原因：
 
-![](/assets/img/GAN_problem/MC.png)
+<p align="center">
+    <img src="/assets/img/GAN_problem/MC.png">
+</p>
 
 由图我们可以得到，生成器更倾向于生成右侧情形的数据，不敢冒险越过雷池去尝试第一种情况，这就是collapse mode的一种解释。
 
@@ -76,7 +94,9 @@ weight值验证结论的正确性，从实验的结果上确实可以得到论�
 首先是对梯度消失问题的简单解决，就是在生成数据上增加高维噪声让生成分布与真实分布存在一定的重合这样就避免了JS为log2的悲剧，我们可以由下图
 简单看一下实现方法：
 
-![](/assets/img/GAN_problem/AN.png)
+<p align="center">
+    <img src="/assets/img/GAN_problem/AN.png">
+</p>
 
 还有一些方法可以应用，我就简单罗列一下：
 
@@ -92,8 +112,12 @@ weight值验证结论的正确性，从实验的结果上确实可以得到论�
 
 **附录**
 
-![](/assets/img/GAN_problem/PA1.png)
+<p align="center">
+    <img src="/assets/img/GAN_problem/PA1.png">
+</p>
 
-![](/assets/img/GAN_problem/PA2.png)
+<p align="center">
+    <img src="/assets/img/GAN_problem/PA2.png">
+</p>
 
 谢谢观看，希望对您有所帮助，欢迎指正错误，欢迎一起讨论！！！
