@@ -56,7 +56,7 @@ $$\mathcal L(\theta , \phi, x^{(i)}) = \frac{1}{N} \sum_{i=1}^N [\lambda_1 \math
 
 这里的$\mathcal C$就是像素上的重构误差，${\lambda_1,\lambda_2}$为控制的参数，这个损失将实现VAE的整体优化。对于映射上的GAN的损失函数设计，
 文章主要采用匹配的方法博弈，文章匹配有三组。一组是真实匹配$z,z$，对应的损失记为$\mathcal L_{c=1}(z,z) \equiv -log(D(z,z))$；
-一组是生成上的匹配$z,z^{'}$，其中$z^{'}$为生成的隐藏变量，对应的损失记为$\mathcal L_{c=0}(z,z^{'}) \equiv -(1 - log(D(z,z^{'})))$；
+一组是生成上的匹配$z,z^'$，其中$z^'$为生成的隐藏变量，对应的损失记为$\mathcal L_{c=0}(z,z^') \equiv -(1 - log(D(z,z^')))$；
 最后一组是噪声对应的匹配$z,\epsilon$，对应的损失记为$\mathcal L_{c=0}(z,\epsilon) \equiv -(1 - log(D(z,\epsilon)))$。
 则最终的判别器的损失：
 
