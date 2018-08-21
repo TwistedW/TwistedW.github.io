@@ -28,7 +28,7 @@ description:
 由于我们实验室的方向是做机器学习这个大类的图像处理，所以机器学习的基础知识是入门人工智能大方向的必备知识。对于机器学习
 的自学书籍，中文资料上个人比较喜欢周志华老师编写的[《机器学习》](https://book.douban.com/subject/26708119/)，
 对于英文资料比较推荐剑桥大学的[《Bayesian Reasoning and Machine Learning》](https://book.douban.com/subject/5397287/),
-还有大量的公开课可以让我们参考，首选的是[吴恩大的系列视频](https://www.bilibili.com/video/av9912938/)。
+还有大量的公开课可以让我们参考，首选的是[吴恩达的系列视频](https://www.bilibili.com/video/av9912938/)。
 机器学习的算法实现，我们需要对Python和相应的神经网络框架的掌握。对于Python语言的自学上，入门的话推荐[莫烦的Python系列视频](https://morvanzhou.github.io/)，
 在视频的基础上最好有一本书在平常code上做参考和查找，书本上我推荐[《Python编程从入门到实践》](https://book.douban.com/subject/26829016/)。
 
