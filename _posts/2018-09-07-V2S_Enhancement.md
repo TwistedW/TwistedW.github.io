@@ -80,7 +80,7 @@ $$ \hat{M} = \delta (W_m^T f_{15}^{av}) \odot M_n $$
 
 $$ \phi_6 = \underbrace{ConvBlock(...ConvBlock([W_{m \phi }^T \hat{M};W_{n \phi }^T \Phi_n]))}_{\times 6} $$
 
-$$ \hat{\Phi} = \frac{W_{\phi}^T \phi_6 + \Phi_n}{\Vert (\phi}^T \phi_6 + \Phi_n) \Vert_2} $$
+$$ \hat{\Phi} = \frac{W_{\phi}^T \phi_6 + \Phi_n}{\Vert \phi^T \phi_6 + \Phi_n) \Vert_2} $$
 
 通过最小化预测幅度谱图和真实分离幅度谱图之间的$L_1$损失来训练幅度子网。通过最大化相位预测和真实相位之间的共同相似性来训练相子网，
 并通过真实量值进行缩放。总体优化目标是：
