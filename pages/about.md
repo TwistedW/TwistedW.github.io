@@ -20,7 +20,7 @@ permalink: /pages/about.html
 	<hr>
 	<br>
 	<p>
-	    现在是研二的学生，老师给定的方向是生成对抗网络（GAN）这个方向，希望能和优秀的你多多交流！
+	    现在是研二的学生，主要研究图象生成对计算机视觉和听觉感知有浓厚兴趣，希望能和优秀的你多多交流！
 	</p>
 	<br>
 
@@ -31,7 +31,7 @@ permalink: /pages/about.html
 	<table class="table table-striped">
 		<tr>
 			<td>姓  名：</td>    
-			<td>武  广 （1997）</td>
+			<td>武  广</td>
 		</tr>
 		<tr>
 			<td>学  历：</td>    
