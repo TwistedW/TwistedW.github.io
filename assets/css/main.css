@@ -58,7 +58,7 @@ body {
   font-size: 15px;
   line-height: 1.5;
   font-weight: 300;
-  color: rgba(0,0,0,0.82);
+  color: rgba(0,0,0,0.8);
   background-color: #eaeaea;
   -webkit-text-size-adjust: 100%; }
 
@@ -1260,7 +1260,7 @@ div.gavatar a:hover{
     padding: 5px 2px;
 }
 .postbox a.readmore:hover {
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.8);
     color: #fff;
     padding: 6px;
 }
