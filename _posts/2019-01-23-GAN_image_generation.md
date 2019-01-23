@@ -1,8 +1,10 @@
+---
 layout: post
 title: GAN在图像生成应用综述（论文解读）
 category: 技术
 tags: [GAN]
 description: 
+--- 
 
 > GAN在图像生成上取得了巨大的成功，这无疑取决于GAN在博弈下不断提高建模能力，最终实现以假乱真的图像生成。GAN自2014年诞生至今也有4个多年头了，大量围绕GAN展开的文章被发表在各大期刊和会议。以改进和分析GAN的数学研究、提高GAN的生成质量研究、GAN在图像生成上的应用（指定图像合成、文本到图像，图像到图像、视频）以及GAN在NLP和其它领域的应用。图像生成是研究最多的，并且该领域的研究已经证明了在图像合成中使用GAN的巨大潜力。本博客围绕[An Introduction to Image Synthesis with Generative Adversarial Nets](https://arxiv.org/abs/1803.04469)一文对GAN在图像生成应用做个综述。
 
