@@ -48,7 +48,7 @@ R-FCN因为要生成额外的一个channel数量较多（channel数量为classes
 
 Light-Head RCNN 如Figure2 C所示，基本上是在R-FCN基础上做的修改。针对R-FCN中score map的channel数量较大，
 作者采用一个large separable convolution生成thinner feature map（large separable convolution可以参看下面的Figure3），
-其实就是将原来P^2(C+1)的channel数量用10*（C+1）来代替，差不多是从3969降低到490，这样就降低了后续Pooling和其他操作的计算开销。
+其实就是将原来$P^2(C+1)$的channel数量用$P^2*10$来代替，差不多是从3969降低到490，这样就降低了后续Pooling和其他操作的计算开销。
 Figure2 C中，这490维的feature map如果作为PSROI Pooling的输入之一（另一个输入是ROI），就可以得到channel数为10的输出；
 如果这490维的feature map是作为ROI Pooling的输入之一（另一个输入是ROI），那么就可以得到channel数为490的输出。
 最后加上全连接层是因为前面large separable convolution操作对channel做了改动，所以后面没法直接做分类，
