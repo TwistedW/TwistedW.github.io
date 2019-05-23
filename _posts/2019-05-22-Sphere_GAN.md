@@ -166,7 +166,7 @@ def inverse_stereographic_projection(x) :
 
 ```python
 def sphere_loss(x, y) :
-		loss = tf.math.acos(tf.keras.backend.batch_dot(x, y, axes=1))
+	loss = tf.math.acos(tf.keras.backend.batch_dot(x, y, axes=1))
     return loss
 ```
 
@@ -195,13 +195,12 @@ def generator_loss(loss_func, fake, moment=3):
     fake_loss = 0
     bs, c = fake.get_shape().as_list()
 
-    if loss_func == 'sphere' :
-      	# [bs, c+1] -> [0, 0, 0, ... , 1]
-        north_pole = tf.one_hot(tf.tile([c], multiples=[bs]), depth=c+1)  
-        fake_projection = inverse_stereographic_projection(fake)
+    # [bs, c+1] -> [0, 0, 0, ... , 1]
+    north_pole = tf.one_hot(tf.tile([c], multiples=[bs]), depth=c+1)  
+    fake_projection = inverse_stereographic_projection(fake)
 
-        for i in range(1, moment+1) :
-            fake_loss += -tf.reduce_mean(tf.pow(sphere_loss(fake_projection, north_pole), i))
+    for i in range(1, moment+1) :
+        fake_loss += -tf.reduce_mean(tf.pow(sphere_loss(fake_projection, north_pole), i))
 
     loss = fake_loss
     return loss
