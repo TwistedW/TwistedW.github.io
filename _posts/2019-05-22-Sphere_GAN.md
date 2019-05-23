@@ -166,7 +166,7 @@ def inverse_stereographic_projection(x) :
 
 ```python
 def sphere_loss(x, y) :
-	loss = tf.math.acos(tf.keras.backend.batch_dot(x, y, axes=1))
+    loss = tf.math.acos(tf.keras.backend.batch_dot(x, y, axes=1))
     return loss
 ```
 
