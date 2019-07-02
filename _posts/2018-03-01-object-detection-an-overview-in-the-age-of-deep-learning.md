@@ -17,13 +17,17 @@ description:
 （部分）用于[年度ImageNet大规模视觉识别挑战比赛（ILSVRC）](http://www.image-net.org/challenges/LSVRC)。近年来，分类模型已经超过了人类的表现，
 因此该问题基本算是一个已经解决的问题。图像分类领域有许多挑战，但是也有许多文章介绍已经解决了的，以及未解决的挑战。
 
-<img src="/assets/img/Objective/classifier.jpg" height="500px" alt="分类样例"/>
+<p align="center">
+    <img src="/assets/img/Objective/classifier.jpg" height="500px" alt="分类样例"/>
+</p>
 
 **目标定位**
 
 与分类类似，定位问题是找到图像中单一物体的位置。
 
-<img src="/assets/img/Objective/objective.jpg" height="400px" alt="目标定位示例"/>
+<p align="center">
+    <img src="/assets/img/Objective/objective.jpg" height="400px" alt="目标定位示例"/>
+</p>
 
 目标定位在实际生活中是很有用的。例如，智能裁剪（根据目标所在位置来裁剪图像），甚至对规则目标进行提取，以使用不同技术对其进行进一步处理。
 它可以与分类相结合，不仅可以定位对象，还可以将其进行分类。
@@ -38,7 +42,9 @@ description:
 与分类问题相比，目标检测的输出数量是可变的，因为对于每幅图来说，检测到的目标数目可能是不同的。在本文中，我们将介绍目标检测实际应用的细节，
 以及它作为一个机器学习问题，存在的主要问题是什么，过去几年中，解决该问题的方式是如何一步步变成深度学习的。
 
-<img src="/assets/img/Objective/detection.jpg" height="400px" alt="目标检测示例"/>
+<p align="center">
+    <img src="/assets/img/Objective/detection.jpg" height="400px" alt="目标检测示例"/>
+</p>
 
 # 实际应用 #
 
@@ -60,7 +66,9 @@ description:
 我们都很喜欢[Pinterest视觉搜索引擎](https://labs.pinterest.com/assets/paper/visual_search_at_pinterest.pdf)。他们使用目标检测技术作为系统的一部分，
 用于索引图像中的不同部分。这样，当你搜索某个特定的提包时，你能搜到你想要的手提袋在不同场景下的图像。这个功能比谷歌图像的反向搜索引擎要强大得多。
 
-<img src="/assets/img/Objective/visual.jpg" height="500px" />
+<p align="center">
+    <img src="/assets/img/Objective/visual.jpg" height="500px" />
+</p>
 
 相似图像：我们应用目标检测技术来定位包或者鞋子这类产品。在这个例子中，用户可以点击自动标注好的物体去查看相似的产品。（Pinterest论文中的例子）
 
@@ -73,7 +81,9 @@ description:
 一些公司用无人机来自动勘察人类难以进入的区域（例如[Betterview](https://www.betterview.net)），或使用目标检测技术进行一般性的分析
 （如[TensorFlight](https://tensorflight.com)）。除此之外，一些公司在没有人工干预的情况下使用这种技术进行自动检测和定位问题。
 
-<img src="/assets/img/Objective/satellite.jpg" height="400px" />
+<p align="center">
+    <img src="/assets/img/Objective/satellite.jpg" height="400px" />
+</p>
 
 # 目标检测的问题与挑战 #
 
@@ -138,7 +148,9 @@ description:
 - 使用CNN在每个区域上提取特征。
 - 使用支持向量机对区域进行分类。
 
-![](/assets/img/Objective/RCNN.jpg)
+<p align="center">
+    <img src="/assets/img/Objective/RCNN.jpg" height="400px" />
+</p>
 
 图[Girshick, Ross, et al. "Rich feature hierarchies for accurate object detection and semantic segmentation." 2014.](https://arxiv.org/abs/1311.2524)
 
@@ -152,7 +164,9 @@ description:
 （Region of Interest，ROI），并且最后用前馈神经网络来进行分类和回归。这个方法不仅快，而且由于RoI池化层和全连接层的存在，该模型可以进行端到端的求导，
 并且训练也更容易。最大的不足是该模型仍旧依赖选择性搜索（或者其他的区域候选算法），这也成为了模型推理阶段的一个瓶颈。
 
-![](/assets/img/Objective/FRCNN.jpg)
+<p align="center">
+    <img src="/assets/img/Objective/FRCNN.jpg" height="400px" />
+</p>
 
 图[Girshick, Ross. "Fast R-CNN" 2015.](https://arxiv.org/abs/1504.08083)
 
@@ -162,7 +176,9 @@ description:
 （You Only Look Once: Unified, Real-Time Object Detection（YOLO））的论文。YOLO提出了一个简单的卷积神经网络方法，它取得了很好的结果，
 并且速度也非常快，第一次实现了实时的目标检测。
 
-![](/assets/img/Objective/YOLO.jpg)
+<p align="center">
+    <img src="/assets/img/Objective/YOLO.jpg" height="400px" />
+</p>
 
 图[Redmon, Joseph, et al. "You only look once: Unified, real-time object detection." 2016.](https://arxiv.org/abs/1506.02640)
 
@@ -172,7 +188,9 @@ description:
 增加了一个所谓的“区域候选网络（Regio Proosal Network，RPN）”，试图摆脱搜索选择算法，从而让模型实现完全端到端的训练。我们不会详细介绍RPN的原理，
 不过简单地说，它的作用是根据“属于目标”的分数来输出可能目标。RoI池化层和全连接层使用这些目标进行分类。我们会在后续的博客中详细介绍该结构的细节。
 
-<img src="/assets/img/Objective/FR-CNN.jpg" height="400px" />
+<p align="center">
+    <img src="/assets/img/Objective/FR-CNN.jpg" height="400px" />
+</p>
 
 图[Ren, Shaoqing, et al. "Faster R-CNN: Towards real-time object detection with region proposal networks." 2015.](https://arxiv.org/abs/1506.01497)
 
