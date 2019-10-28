@@ -73,15 +73,6 @@ permalink: /pages/about.html
 				<a href="{{ site.author.weibo }}" target="_blank">https://weibo.com/u/5261676762</a>
 			</td> 
 		</tr>
-		
-		<tr>
-			<td>
-				QQ：
-			</td> 
-			<td>
-				2359375192
-			</td> 
-		</tr>
 	</table>
 
 
