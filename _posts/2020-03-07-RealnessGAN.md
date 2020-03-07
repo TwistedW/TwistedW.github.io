@@ -15,7 +15,7 @@ GAN[1]自提出就得到了空前反响，GAN在逼真的图像生成方面以�
 在标准的GAN中，输入样本的真实性由判别器使用单个标量估算，也就是判别输出的是一个鉴别分数。然而诸如图像之类的高维数据，需要从多个角度认知它们，并基于多个标准来推断这幅图像是否逼真。 如图1所示，在拿到一张人脸肖像图时，我们可能会关注其面部结构，皮肤色调，头发纹理，甚至虹膜和牙齿等细节，它们每一个属性都代表着真实性的不同方面。 此时判别器用单个标量输出鉴别结果，这是多个量度的抽象和汇总，它们共同反映了图像的整体真实性。 但是这种简洁的测量可能传达的信息不足，无法引导生成器向着正确的图像进行生成，这就可能导致在GAN中众所周知的模式崩溃和梯度消失的发生。
 
 <p align="center">
-    <img src="/assets/img/GAN/RealnessGAN1.jpg">
+    <img src="/assets/img/GAN/RealnessGAN1.png">
 </p>
 
 <p align="center">
@@ -51,7 +51,7 @@ $$
 \max_G\min_DV(G,D)= \mathbb E_{x \sim p_{data}}[\mathcal D_{KL}(\mathcal A_1 \Vert D(x))]+E_{x \sim p_g}[\mathcal D_{KL}(\mathcal A_0 \Vert D(x))]
 $$
 
-先从理论角度分析下这个目标函数，对于判别器$D$，它的目的是为了将真的数据鉴定为真的，假的数据鉴定为假的，所以对于真实数据$x\sim p_{data}$，希望鉴定结果$D(x)$与理论真实分布$\mathcal A_1$尽可能接近，即$\mathcal D_{KL}(\mathcal A_1||D(x))=0$为理想解，同理对于生成数据$x \sim p_g$则希望判别输出与理论虚假分布$\mathcal A_0$尽可能接近，即$\mathcal D_{KL}(\mathcal A_0||D(x))=0$为理想解。而对于生成器$G$，公式的第一项由于没有$G$的参与不允讨论，而对于第二项生成器则希望能够骗过判别器，即$\mathcal D_{KL}(\mathcal A_0||D(x))$越大越好，也就是希望$D(x)$与理论虚假分布$\mathcal A_0$差异越大越好。那生成数据的判别分布于理论虚假分布差异越大，怎么能保证与理论真实分布$\mathcal A_1$越接近呢？文章也进行了讨论，主要通过对生成器的损失进行调整实现，这个我们后面再详细说明。
+先从理论角度分析下这个目标函数，对于判别器$D$，它的目的是为了将真的数据鉴定为真的，假的数据鉴定为假的，所以对于真实数据$x\sim p_{data}$，希望鉴定结果$D(x)$与理论真实分布$\mathcal A_1$尽可能接近，即$\mathcal D_{KL}(\mathcal A_1 \Vert D(x))=0$为理想解，同理对于生成数据$x \sim p_g$则希望判别输出与理论虚假分布$\mathcal A_0$尽可能接近，即$\mathcal D_{KL}(\mathcal A_0 \Vert D(x))=0$为理想解。而对于生成器$G$，公式的第一项由于没有$G$的参与不允讨论，而对于第二项生成器则希望能够骗过判别器，即$\mathcal D_{KL}(\mathcal A_0 \Vert D(x))$越大越好，也就是希望$D(x)$与理论虚假分布$\mathcal A_0$差异越大越好。那生成数据的判别分布于理论虚假分布差异越大，怎么能保证与理论真实分布$\mathcal A_1$越接近呢？文章也进行了讨论，主要通过对生成器的损失进行调整实现，这个我们后面再详细说明。
 
 知道了目标函数，那怎么保证模型博弈到最后得到的最优解就是$p_g=p_{data}$呢？这需要进一步对目标函数进行分析了，接下来会有一定的公式推导，不喜欢这部分的可以直接跳到下一节，最后的结论就是模型的收敛最优解就是生成数据分布于真实数据分布相同$p_g=p_{data}$。
 
@@ -172,7 +172,7 @@ $$
 文章首先进行了简单的实验验证模型的有效性，通过toy dataset进行验证，与基准模型进行了对比，选取了StdGAN[2]、WGAN-GP[3]、LSGAN[4]和HingeGAN[5]作为基准模型，得到的结果如图2所示。
 
 <p align="center">
-    <img src="/assets/img/GAN/RealnessGAN2.jpg">
+    <img src="/assets/img/GAN/RealnessGAN2.png">
 </p>
 
 <p align="center">
@@ -182,7 +182,7 @@ $$
 可以看到RealnessGAN展示了较为优越的结果生成，在验证$u$的数量上，文章也进行了实验，得到的结果如图3所示。
 
 <p align="center">
-    <img src="/assets/img/GAN/RealnessGAN3.jpg">
+    <img src="/assets/img/GAN/RealnessGAN3.png">
 </p>
 
 <p align="center">
@@ -192,7 +192,7 @@ $$
 在固定$G$的更新数量下，$u$的数量越多并没有取得越好的结果，但是随着$G$给予足够的更新，$u$的数量增大得到的结果就越有优势。在定性上模型给出的结果如图4.
 
 <p align="center">
-    <img src="/assets/img/GAN/RealnessGAN4.jpg">
+    <img src="/assets/img/GAN/RealnessGAN4.png">
 </p>
 
 <p align="center">
@@ -202,7 +202,7 @@ $$
 定量上文章在Cifar10数据集下进行了对比实验：
 
 <p align="center">
-    <img src="/assets/img/GAN/RealnessGAN5.jpg">
+    <img src="/assets/img/GAN/RealnessGAN5.png">
 </p>
 
 <p align="center">
@@ -212,7 +212,7 @@ $$
 为了验证$\mathcal A_1$与$\mathcal A_0$的差异性对结果的影响，文章做了对比实验，结果如图6.
 
 <p align="center">
-    <img src="/assets/img/GAN/RealnessGAN6.jpg">
+    <img src="/assets/img/GAN/RealnessGAN6.png">
 </p>
 
 <p align="center">
@@ -222,7 +222,7 @@ $$
 对于$G$的损失优化上，作者进行了比对。
 
 <p align="center">
-    <img src="/assets/img/GAN/RealnessGAN7.jpg">
+    <img src="/assets/img/GAN/RealnessGAN7.png">
 </p>
 
 <p align="center">
