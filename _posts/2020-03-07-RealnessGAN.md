@@ -6,7 +6,7 @@ tags: [GAN]
 description: 
 ---
 
-> GAN自提出以来就以生成对抗为目标进行模型优化，这种对抗真的区分了真实数据和生成数据了吗？ICLR2020中的一篇[REAL OR NOT REAL, THAT IS THE QUESTION]()（RealnessGAN）提出了对传统GAN判别数据真假的质疑，文章抛出了在传统GAN中对于判别器的鉴别输出为一常数score是不合理的观点，并由此提出合理的解决方案，本文将对RealnessGAN进行解析，探究GAN是否真的区分了真假。
+> GAN自提出以来就以生成对抗为目标进行模型优化，这种对抗真的区分了真实数据和生成数据了吗？ICLR2020中的一篇[Real or Not Real, that is the Question](https://arxiv.org/abs/2002.05512)（RealnessGAN）提出了对传统GAN判别数据真假的质疑，文章抛出了在传统GAN中对于判别器的鉴别输出为一常数score是不合理的观点，并由此提出合理的解决方案，本文将对RealnessGAN进行解析，探究GAN是否真的区分了真假。
 
 # 论文引入
 
@@ -100,14 +100,14 @@ $$
 \end{equation}
 $$
 
-最小化$V(G,D)$就是最小化$D_{KL}(p_x \Vert D(x))$，则D的最优解就是$D^*(x) =p_x $，接下来就是对$G$的最优解进行讨论，当$D^*(x) =p_x $时，假设$p_g=p_{data}$，此时$D_G^*(x,u)=\frac{\mathcal A_1(u) + \mathcal A_0(u)}{2}$，则对应的$V^*(G,D^*_G)$：
+最小化$V(G,D)$就是最小化$D_{KL}(p_x \Vert D(x))$，则D的最优解就是$D^*(x) ={p_x}$，接下来就是对$G$的最优解进行讨论，当$D^*(x) =p_{x}$时，假设$p_g=p_{data}$，此时$D_G^*(x,u)=\frac{\mathcal A_1(u) + \mathcal A_0(u)}{2}$，则对应的$V^*(G,D^*_G)$：
 
 $$
 V^⋆(G,D_G^⋆)=\int_u \mathcal A_1(u) \log \frac{2 \mathcal A_1(u)}{\mathcal A_1(u)+ 
 \mathcal A_0(u)} + \mathcal A_0(u) \log \frac{2 \mathcal A_0(u)}{\mathcal A_1(u)+ \mathcal A_0(u)}du
 $$
 
-从$V(G,D_G^*)$中减去$V^*(G,D^*_G)$得：
+从$$V(G,D_G^*)$$中减去$$V^*(G,D^*_G)$$得：
 
 $$
 \begin{equation}
@@ -120,7 +120,7 @@ V^\prime(G,D_G^*)&=V(G,D_G^*)-V^*(G,D^*_G)\\
 \end{equation}
 $$
 
-由于$V^*(G,D^*_G)$相对于$G$为常数，最大化$V(G,D_G^*)$等价于最大化$V^\prime(G,D_G^*)$，当且仅当KL散度达到其最小值时，才能获得最佳$V^\prime(G,D_G^*)$，对于任何有效的$x$和$u$：
+由于$$V^*(G,D^*_G)$$相对于$G$为常数，最大化$$V(G,D_G^*)$$等价于最大化$$V^\prime(G,D_G^*)$$，当且仅当KL散度达到其最小值时，才能获得最佳$$V^\prime(G,D_G^*)$$，对于任何有效的$x$和$u$：
 
 $$
 \frac{p_{data}\mathcal A_1 + p_g \mathcal A_0}{2} = \frac{(p_{data}+p_g)(\mathcal A_1+ \mathcal A_0)}{4}
