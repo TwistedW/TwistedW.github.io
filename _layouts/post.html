@@ -54,16 +54,27 @@ layout: default
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script>
-	var gitment = new Gitment({
-		id: '{{ page.date }}',
-		owner: 'TwistedW',
-		repo: 'TwistedW.github.io',
-		oauth: {
-			client_id: '4399884d932674191ee8',
-			client_secret: '8d77ba236dae14003d2e471c72449b03cfd50d1e',
-		},
-	});
-	gitment.render('gitmentContainer');
+	// var gitment = new Gitment({
+	// 	id: '{{ page.date }}',
+	// 	owner: 'TwistedW',
+	// 	repo: 'TwistedW.github.io',
+	// 	oauth: {
+	// 		client_id: '4399884d932674191ee8',
+	// 		client_secret: '8d77ba236dae14003d2e471c72449b03cfd50d1e',
+	// 	},
+	// });
+	// gitment.render('gitmentContainer');
+	const gitalk = new Gitalk({
+	  clientID: '4399884d932674191ee8',
+	  clientSecret: '8d77ba236dae14003d2e471c72449b03cfd50d1e',
+	  repo: 'TwistedW.github.io',      // The repository of store comments,
+	  owner: 'TwistedW',
+	  admin: ['GitHub repo owner and collaborators, only these guys can initialize github issues'],
+	  id: '{{ page.date }}',      // Ensure uniqueness and length less than 50
+	  distractionFreeMode: false  // Facebook-like distraction free mode
+	})
+
+	gitalk.render('gitalk-container')
 </script>
 
   {% include dashang.html %}
